@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Comic_Neue } from "next/font/google";
+import { Comic_Neue, Audiowide } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
@@ -8,6 +8,12 @@ const comic_neue = Comic_Neue({
   weight: ["300", "400", "700"],
   subsets: ["latin"],
   variable: "--font-comic-neue",
+});
+
+const audiowide = Audiowide({
+  weight: ["400"],
+  subsets: ["latin"],
+  variable: "--font-audiowide",
 });
 
 export const metadata: Metadata = {
@@ -23,7 +29,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${comic_neue.variable} antialiased`}>
+      <body className={`${comic_neue.variable} ${audiowide.variable} antialiased`}>
         <Navbar />
         <div>{children}</div>
         <Footer />

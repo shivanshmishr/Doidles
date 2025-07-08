@@ -6,15 +6,17 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <div className="">
+    <div className="z-40">
       <div className="w-[95%] py-1 mx-auto flex flex-row justify-between items-center ">
-        <Image
-          src="/images/logo.png"
-          alt="Logo"
-          width={300}
-          height={300}
-          className="w-auto h-16 object-contain"
-        />
+        <Link href="/">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={300}
+            height={300}
+            className="w-auto h-16 object-contain"
+          />
+        </Link>
 
         <div className="flex flex-row gap-10">
           <Link href="/">
@@ -52,14 +54,12 @@ export const Navbar = () => {
               Our Team
             </li>
           </Link>
-
         </div>
 
         <button className="flex flex-row items-center gap-2 px-3 py-1 border-2 border-white/20 rounded-xl bg-[#4E035A] hover:scale-110 cursor-pointer transition-all duration-300">
           <RiWhatsappFill className="text-xl " />
           <span className="text-md font-medium ">Party Booking</span>
         </button>
-
       </div>
     </div>
   );

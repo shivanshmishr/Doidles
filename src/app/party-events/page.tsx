@@ -1,10 +1,17 @@
 "use client";
 import React from "react";
+import { HeroSection } from "@/components/party-events/HeroSection";
+import { PartyContents } from "../../components/party-events/PartyContents";
 
 const PartyEvents = () => {
   return (
-    <div>
-      <h1 className="text-lg my-10 text-center">Party Events</h1>
+    <div className="">
+      <section className="relative">
+        <HeroSection />
+      </section>
+      <section className="relative">
+        <PartyContents />
+      </section>
     </div>
   );
 };
