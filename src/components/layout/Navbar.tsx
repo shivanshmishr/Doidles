@@ -41,7 +41,7 @@ export const Navbar = () => {
             </li>
           </Link>
 
-          <Link href="/party-event">
+          <Link href="/party-events">
             <li className="text-xl font-semibold cursor-pointer hover:scale-110 hover:underline transition-all">
               Party/Event
             </li>

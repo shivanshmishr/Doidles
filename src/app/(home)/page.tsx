@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AboutSection } from "@/components/home/AboutSection";
 
 export default function Home() {
   return (
@@ -10,6 +11,8 @@ export default function Home() {
         alt="Hero Video"
         className="w-full h-auto max-h-[90vh] object-cover"
       />
+
+      <AboutSection />
     </div>
   );
 };

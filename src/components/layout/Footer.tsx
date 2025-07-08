@@ -43,7 +43,7 @@ export const Footer = () => {
             <li className="text-md text-white/80">Offers</li>
           </ul>
         </div>
-        <div className="flex flex-col pb-10 items-center md:border-r-2 border-white/20">
+        <div className="flex flex-col pb-10 items-center">
           <h1 className="text-xl font-semibold my-4">Contact Us</h1>
           <div className="md:px-10 flex flex-col space-y-2">
             <p className="text-lg font-semibold my-1">Address</p>
