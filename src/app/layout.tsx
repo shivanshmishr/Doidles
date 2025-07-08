@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Comic_Neue } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
+import { Footer } from "@/components/layout/Footer";
 import "./globals.css";
 
 const comic_neue = Comic_Neue({
@@ -25,6 +26,7 @@ export default function RootLayout({
       <body className={`${comic_neue.variable} antialiased`}>
         <Navbar />
         <div>{children}</div>
+        <Footer />
       </body>
     </html>
   );

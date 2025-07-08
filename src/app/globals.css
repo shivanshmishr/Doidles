@@ -9,3 +9,14 @@ body {
 li{
   list-style: none;
 }
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background: #4E035A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+}
