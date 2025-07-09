@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { AboutSection } from "@/components/home/AboutSection";
+import { OurOfferings } from "@/components/home/OurOfferings";
 
 export default function Home() {
   return (
@@ -12,7 +13,11 @@ export default function Home() {
         className="w-full h-auto max-h-[90vh] object-cover"
       />
 
+      {/* About Us Section */}
       <AboutSection />
+
+      {/* Our Offerings Section */}
+      <OurOfferings />
     </div>
   );
 };
