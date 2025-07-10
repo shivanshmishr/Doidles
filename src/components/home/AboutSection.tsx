@@ -8,7 +8,7 @@ export const AboutSection = () => {
 
 
       {/* About Us Section */}
-      <div className="flex mt-20 mb-10 md:flex-row items-center">
+      <div className="flex flex-col mt-20 mb-10 md:flex-row items-center">
         {/* Left: Image */}
         <div
           className="md:w-[45%] relative h-full"

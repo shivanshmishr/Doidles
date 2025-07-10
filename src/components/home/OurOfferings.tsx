@@ -9,7 +9,7 @@ export const OurOfferings = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen md:w-[80%] lg:w-[55%] mx-auto custom-bg2 p-6">
+    <div className="min-h-screen md:w-[80%] lg:w-[55%] mx-auto p-6">
       <h1 className="gamingFont text-4xl text-center font-extrabold my-12">
         OUR OFFERINGS
       </h1>
