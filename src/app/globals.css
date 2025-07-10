@@ -57,3 +57,30 @@ li {
 .rotate-right-3d {
   transform: perspective(1000px) rotateY(-15deg);
 }
+
+
+@keyframes spin-clockwise {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin-counter {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.outer-spin {
+  animation: spin-clockwise 10s linear infinite;
+}
+
+.inner-spin {
+  animation: spin-counter 5s linear infinite;
+}
