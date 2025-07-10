@@ -2,6 +2,7 @@ import Image from "next/image";
 import { HomeHeroSection } from "@/components/home/HomeHeroSection";
 import { AboutSection } from "@/components/home/AboutSection";
 import { OurOfferings } from "@/components/home/OurOfferings";
+import { TestimonialSection } from "@/components/home/TestimonialSection";
 
 export default function Home() {
   return (
@@ -14,6 +15,9 @@ export default function Home() {
 
       {/* Our Offerings Section */}
       <OurOfferings />
+
+      {/* Testimonial Section */}
+      <TestimonialSection />
     </div>
   );
 };

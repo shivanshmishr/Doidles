@@ -15,7 +15,7 @@ export const OurOfferings = () => {
       </h1>
 
       <div>
-        <div className="grid grid-cols-2 md:grid-cols-2 gap-10 justify-center items-center">
+        <div className="grid grid-cols md:grid-cols-2 gap-10 justify-center items-center">
           {ourOfferings.map((item, index) => (
             <div
               key={item.id}

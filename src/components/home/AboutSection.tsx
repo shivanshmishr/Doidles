@@ -4,18 +4,11 @@ import Image from "next/image";
 
 export const AboutSection = () => {
   return (
-    <div className="bg-black min-h-screen md:w-[80%] mx-auto text-white flex flex-col">
-
-
+    <div className="bg-black min-h-screen w-[90%] space-y-5 md:w-[80%] mx-auto text-white flex flex-col">
       {/* About Us Section */}
       <div className="flex flex-col mt-20 mb-10 md:flex-row items-center">
         {/* Left: Image */}
-        <div
-          className="md:w-[45%] relative h-full"
-          style={{
-            transform: "perspective(1000px) rotateY(15deg)",
-          }}
-        >
+        <div className="w-full md:w-[45%] relative h-full md:rotate-left-3d">
           <Image
             src="/images/aboutus.webp"
             alt="Founder"
@@ -26,14 +19,9 @@ export const AboutSection = () => {
         </div>
 
         {/* Right: Text */}
-        <div
-          className="bg-neutral-900 p-8 rounded-xl md:w-[55%] h-[60vh] flex flex-col justify-center shadow-lg"
-          style={{
-            transform: "perspective(1000px) rotateY(-15deg)",
-          }}
-        >
+        <div className="w-full md:w-[55%] py-4 bg-neutral-900 p-8 rounded-xl h-[60vh] flex flex-col justify-center shadow-lg md:rotate-right-3d">
           <h2 className="text-3xl font-extrabold mb-4">WHY DOODLES?</h2>
-          <p className="text-lg leading-relaxed text-gray-300">
+          <p className="text-md md:text-lg leading-relaxed text-gray-300">
             Welcome to Doodles, a vibrant world of fun, learning, and adventure
             for kids aged 5 to 15! Founded by Amit Sharma of Miraj Cinemas,
             Doodles blends entertainment with development through a toddler
@@ -48,7 +36,7 @@ export const AboutSection = () => {
       {/* Vision & Mission */}
       <div className="my-20">
         {/* Vision */}
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-col space-y-5 md:space-y-0 md:flex-row justify-between items-center">
           <h2 className="md:w-[20%] gamingFont text-3xl font-extrabold">
             VISION
           </h2>
@@ -58,15 +46,17 @@ export const AboutSection = () => {
         </div>
 
         {/* Mission */}
-        <div className="flex flex-row justify-between items-center">
+        <div className="flex flex-col my-10 space-y-5 md:space-y-0 md:flex-row justify-between items-center">
           <h2 className="md:w-[20%] gamingFont text-3xl font-extrabold">
             MISSION
           </h2>
           <p className="md:w-[85%] text-lg md:text-xl leading-relaxed text-gray-300">
-            At Doodles, our mission is to deliver safe, hygienic, and engaging gaming experiences with dedicated support throughout. As a pioneering Indian gaming zone, we align with the Make in India vision, bringing the joy of gaming nationwide
+            At Doodles, our mission is to deliver safe, hygienic, and engaging
+            gaming experiences with dedicated support throughout. As a
+            pioneering Indian gaming zone, we align with the Make in India
+            vision, bringing the joy of gaming nationwide
           </p>
         </div>
-
       </div>
     </div>
   );

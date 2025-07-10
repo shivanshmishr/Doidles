@@ -1,13 +1,15 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@tailwind utilities;
+
 body {
   background: #000;
   color: #fff;
   font-family: "Comic Neue", cursive;
 }
 
-li{
+li {
   list-style: none;
 }
 
@@ -19,7 +21,7 @@ li{
   width: 5px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #4E035A;
+  background: #4e035a;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -27,10 +29,10 @@ li{
 }
 
 .custom-bg::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/images/background.png');
+  background-image: url("/images/background.png");
   background-size: cover;
   background-position: center;
   opacity: 0.15;
@@ -38,12 +40,20 @@ li{
 }
 
 .custom-bg2::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/images/background.png');
+  background-image: url("/images/background.png");
   background-size: cover;
   background-position: center;
   opacity: 0.1;
   z-index: 0;
+}
+
+.rotate-left-3d {
+  transform: perspective(1000px) rotateY(15deg);
+}
+
+.rotate-right-3d {
+  transform: perspective(1000px) rotateY(-15deg);
 }
