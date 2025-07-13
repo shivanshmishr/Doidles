@@ -77,10 +77,27 @@ li {
   }
 }
 
+/* Outer ring rotates clockwise */
 .outer-spin {
   animation: spin-clockwise 10s linear infinite;
+  position: relative;
+}
+.outer-spin > *:not(.inner-spin) {
+  animation: spin-counter 10s linear infinite;
 }
 
+/* Inner ring rotates counter-clockwise */
 .inner-spin {
   animation: spin-counter 5s linear infinite;
+  position: relative;
+}
+
+/* Counter-rotate all children inside inner ring EXCEPT the center image */
+.inner-spin > *:not(.centerAvatar) {
+  animation: spin-clockwise 5s linear infinite;
+}
+
+/* pause animation for center avatar */
+.centerAvatar {
+  animation: none !important;
 }
