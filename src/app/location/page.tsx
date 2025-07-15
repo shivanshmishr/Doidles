@@ -1,12 +1,15 @@
 "use client";
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import LocationHeroSection from '@/components/locations/LocationHeroSection';
+import UpcomingLocationSection from '@/components/locations/UpcomingLocation';
 
 const LocationPage = () => {
   return (
     <div>
-        <h1 className='text-lg my-10 text-center'>Location</h1>
+      <LocationHeroSection />
+      <UpcomingLocationSection/>
     </div>
-  )
+  );
 };
 
 export default LocationPage;
