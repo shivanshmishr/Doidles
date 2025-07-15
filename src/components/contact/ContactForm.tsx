@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 import { useForm } from "react-hook-form";
 import {
@@ -19,7 +20,7 @@ type FormValues = {
     query: string;
 };
 
-const PartyForm = () => {
+const ContactForm = () => {
     const form = useForm<FormValues>({
         defaultValues: {
             name: "",
@@ -35,9 +36,6 @@ const PartyForm = () => {
 
     return (
         <div className="flex flex-col justify-center items-center mt-20 mb-10 px-4">
-            <h1 className="text-center text-white text-2xl md:text-4xl font-semibold my-10">
-                Need more information then write to us
-            </h1>
             <div className="w-full max-w-lg p-8 bg-[#111111] rounded-2xl shadow-[0_0_20px_#8e2de210] text-white">
                 <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -122,4 +120,4 @@ const PartyForm = () => {
     );
 };
 
-export default PartyForm;
+export default ContactForm;
