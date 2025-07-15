@@ -1,10 +1,13 @@
 "use client";
 import React from "react";
+import { PartyHeader } from "@/components/party/PartyHeader";
+import PartyForm from "@/components/party/PartyForm";
 
 const PartyEvents = () => {
   return (
     <div>
-        <h1 className='text-lg my-10 text-center'>Location</h1>
+      <PartyHeader/>
+      <PartyForm/>
     </div>
   );
 };
