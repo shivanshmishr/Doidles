@@ -4,31 +4,16 @@ export const TestimonialData = [
     {
         id:1,
         name:"Gaurav Madan",
-        content:"We had a great time! It's the perfect spot to enjoy with friends and family."
+        content:"As a parent, safety is my top priority, and Doodles delivers. The environment is secure, and the team ensures a fun yet safe experience for kids."
     },
     {
         id:2,
         name:"John Doe",
-        content:"An amazing experience! Highly recommend to everyone."
+        content:"Zenith at Doodles is where the action is! My friends and I had an incredible time gaming. Highly recommend!"
     },
     {
         id:3,
         name:"Jane Smith",
-        content:"A fantastic place with great atmosphere and friendly staff."
+        content:"Doodles is the go-to-spot for gaming and fun! The bowling area is a blast, and the wide selection of games keeps things exciting. The staff here really stands out, they're always friendly, helpful, and make sure everyone has a great time. Doodles truly offers a complete and enjoyable experience!."
     },
-    {
-        id:4,
-        name:"Alice Johnson",
-        content:"Loved every moment! Will definitely come back again."
-    },
-    {
-        id:5,
-        name:"Bob Brown",
-        content:"An unforgettable experience! The best place to relax and have fun."
-    },
-    {
-        id:6,
-        name:"Charlie White",
-        content:"A wonderful place with excellent service and a great vibe."
-    }
 ]

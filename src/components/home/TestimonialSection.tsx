@@ -9,70 +9,16 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { TestimonialData } from "@/data/testimonialData";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 
 export const TestimonialSection = () => {
+
   const leftRef = useRef<HTMLDivElement | null>(null);
   const rightRef = useRef<HTMLDivElement | null>(null);
   const headingRef = useRef<HTMLHeadingElement | null>(null);
 
-  useEffect(() => {
-    // Heading animation
-    gsap.fromTo(
-      headingRef.current,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 85%",
-          markers: false,
-        },
-      }
-    );
-
-    // Left side animation (rotating ring)
-    gsap.fromTo(
-      leftRef.current,
-      { x: -100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: leftRef.current,
-          start: "top 80%",
-          markers: false,
-        },
-      }
-    );
-
-    // Right side animation (carousel)
-    gsap.fromTo(
-      rightRef.current,
-      { x: 100, opacity: 0 },
-      {
-        x: 0,
-        opacity: 1,
-        duration: 1.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: rightRef.current,
-          start: "top 80%",
-          markers: false,
-        },
-      }
-    );
-  }, []);
-
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center w-[90%] md:w-[80%] mx-auto">
+    <div className="min-h-screen overflow-hidden flex flex-col justify-center items-center w-[90%] md:w-[80%] mx-auto">
       <h1
         ref={headingRef}
         className="gamingFont text-4xl text-center font-extrabold my-12"
@@ -131,8 +77,8 @@ export const TestimonialSection = () => {
         </div>
 
         {/* Right Section */}
-        <div className="w-[100%] md:w-[50%]" ref={rightRef}>
-          <Carousel className="md:w-[80%] mx-auto">
+        <div className="w-[90%] md:w-[50%]" ref={rightRef}>
+          <Carousel className="w-[80%] mx-auto">
             <CarouselContent className="mb-3">
               {TestimonialData.map((item, index) => (
                 <CarouselItem key={index}>
@@ -143,15 +89,15 @@ export const TestimonialSection = () => {
                         width={60}
                         height={60}
                         alt="arrow"
-                        className="absolute right-4 top-4 w-10 h-10 object-contain"
+                        className="absolute right-4 top-4 w-5 h-5 md:w-10 md:h-10 object-contain"
                       />
-                      <div className="flex flex-col h-[25vh] md:h-[40vh] items-center justify-center p-3">
+                      <div className="flex flex-col h-[40vh] items-center justify-center p-3">
                         <p className="text-md md:text-lg my-2 text-center font-semibold">
                           "{item.content}"
                         </p>
-                        <p className="text-xl md:text-2xl font-semibold text-center">
+                        {/* <p className="text-xl md:text-2xl font-semibold text-center">
                           {item.name}
-                        </p>
+                        </p> */}
                       </div>
                     </div>
                   </div>

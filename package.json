@@ -28,6 +28,7 @@
     "react-fast-marquee": "^1.6.5",
     "react-hook-form": "^7.60.0",
     "react-icons": "^5.5.0",
+    "react-intersection-observer": "^9.16.0",
     "react-tooltip": "^5.29.1",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.0.5"

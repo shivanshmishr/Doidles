@@ -1,47 +1,144 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion, useAnimation } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
+const FadeInSection = ({
+  children,
+  direction = "left",
+}: {
+  children: React.ReactNode;
+  direction?: "left" | "right";
+}) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+
+  React.useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [inView, controls]);
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x: direction === "left" ? -100 : 100,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.6 },
+    },
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={controls}
+      variants={variants}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const OurTeamPage = () => {
   return (
-    <div className="w-[90%] md:w-[80%] mx-auto flex flex-col space-y-10 mb-20">
-      <h1 className="text-4xl font-black my-10 text-center">
-        Our Team
-      </h1>
+    <div className="w-[90%] md:w-[80%] mx-auto flex flex-col space-y-20 mb-20">
+      <h1 className="text-4xl font-black my-10 text-center">Our Team</h1>
 
-      <div className="flex flex-col w-full md:flex-row justify-between items-center gap-10">
-        <div className="md:w-[40%]">
-          <Image
-            src="/images/amitsharma.png"
-            alt="Team Member 1"
-            width={600}
-            height={600}
-            className="w-full md:h-[40vh] object-contain"
-          />
-          <h1 className="text-3xl text-center font-semibold my-1">Amit Sharma</h1>
-          <p className="text-[#D214E6] text-center font-medium text-lg">Co-Founder - Doodles</p>
+      {/* First Member - Fade from Left */}
+      <FadeInSection direction="left">
+        <div className="flex flex-col w-full md:flex-row justify-between items-center gap-10">
+          <div className="md:w-[40%]">
+            <Image
+              src="/images/amitsharma.png"
+              alt="Amit Sharma"
+              width={600}
+              height={600}
+              className="w-full md:h-[40vh] object-contain"
+            />
+            <h1 className="text-3xl text-center font-semibold my-1">
+              Amit Sharma
+            </h1>
+            <p className="text-[#D214E6] text-center font-medium text-lg">
+              Co-Founder - Doodles
+            </p>
+          </div>
+          <div className="text-lg md:text-xl font-medium md:w-[60%]">
+            <p>
+              Amit Sharma has 23+ years in cinema, retail, and hospitality.
+              Ex-MD of Miraj Cinemas; scaled it to 250+ screens, India’s 3rd
+              largest chain. His insight and network ensure prime locations and
+              efficient operations.
+            </p>
+          </div>
         </div>
-        <div className="text-lg md:text-xl font-medium md:w-[60%]">
-          <p>With 20+ years in cinema, gaming, and hospitality, Amit Sharma has built brands from the ground up — including leading Miraj Cinemas to become India’s 3rd largest multiplex chain.  Now building Doodles, a next-gen family entertainment zone, he’s driven by innovation and a passion for creating joyful, immersive experiences. His consumer insight and consultant network help us secure prime real estate and drive operational efficiency</p>
-        </div>
-      </div>
+      </FadeInSection>
 
-       <div className="flex flex-col w-full md:flex-row-reverse justify-between items-center gap-10">
-        <div className="md:w-[40%]">
-          <Image
-            src="/images/amitsharma.png"
-            alt="Team Member 1"
-            width={600}
-            height={600}
-            className="w-full md:h-[40vh] object-contain"
-          />
-          <h1 className="text-3xl text-center font-semibold my-2">Babulnath Dubey</h1>
-          <p className="text-[#D214E6] text-center font-medium text-lg">Co-Founder - Doodles</p>
+      {/* Second Member - Fade from Right */}
+      <FadeInSection direction="right">
+        <div className="flex flex-col w-full md:flex-row-reverse justify-between items-center gap-10">
+          <div className="md:w-[40%]">
+            <Image
+              src="/images/amitsharma.png"
+              alt="Babulnath Dubey"
+              width={600}
+              height={600}
+              className="w-full md:h-[40vh] object-contain"
+            />
+            <h1 className="text-3xl text-center font-semibold my-2">
+              Babulnath Dubey
+            </h1>
+            <p className="text-[#D214E6] text-center font-medium text-lg">
+              Co-Founder - Doodles
+            </p>
+          </div>
+          <div className="text-xl font-medium md:w-[60%]">
+            <p>
+              Bhavesh Shah: 25+ years as India’s top amusement equipment
+              distributor and consultant. Trusted by clients across India and
+              internationally, including Tanzania. Among the only industry
+              experts with comprehensive expertise in arcades, trampolines,
+              bowling, snow worlds, and VR, delivering unparalleled entertainment
+              solutions.
+            </p>
+          </div>
         </div>
-        <div className="text-xl font-medium md:w-[60%]">
-          <p>With over 30 years in the gaming industry, including his time at Essel World, Co-founder Babulnath Dubey brings deep expertise in game development, operations, and customer experience, crafting immersive experiences that connect with audiences of all ages.</p>
+      </FadeInSection>
+
+      {/* Third Member - Fade from Left */}
+      <FadeInSection direction="left">
+        <div className="flex flex-col w-full md:flex-row justify-between items-center gap-10">
+          <div className="md:w-[40%]">
+            <Image
+              src="/images/amitsharma.png"
+              alt="Bhavesh Shah"
+              width={600}
+              height={600}
+              className="w-full md:h-[40vh] object-contain"
+            />
+            <h1 className="text-3xl text-center font-semibold my-1">
+              Bhavesh Shah
+            </h1>
+            <p className="text-[#D214E6] text-center font-medium text-lg">
+              Co-Founder - Doodles
+            </p>
+          </div>
+          <div className="text-lg md:text-xl font-medium md:w-[60%]">
+            <p>
+              Bhavesh Shah: 25+ years as India’s top amusement equipment
+              distributor and consultant. Trusted by clients across India and
+              internationally, including Tanzania. Among the only industry
+              experts with comprehensive expertise in arcades, trampolines,
+              bowling, snow worlds, and VR, delivering unparalleled entertainment
+              solutions.
+            </p>
+          </div>
         </div>
-      </div>
+      </FadeInSection>
     </div>
   );
 };

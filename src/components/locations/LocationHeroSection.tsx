@@ -31,7 +31,7 @@ const LocationHeroSection = () => {
         {locations.map((loc, index) => (
           <div
             key={loc.id}
-            className={`${index % 2 === 0 ? "" : "md:ml-[25%] md:-mt-10"} w-36 h-36 md:w-44 md:h-44 p-4 rounded-full border-2 border-white/20 flex flex-col justify-center items-center cursor-po-inter`}
+            className={`${index % 2 === 0 ? "" : "md:ml-[35%] md:-mt-28"} w-36 h-36 md:w-52 md:h-52 p-4 rounded-full border-2 border-white/20 flex flex-col justify-center items-center cursor-po-inter`}
             onMouseEnter={() => handleHover(loc.name)}
             onMouseLeave={handleLeave}
           >

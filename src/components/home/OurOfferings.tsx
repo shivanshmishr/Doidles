@@ -14,41 +14,6 @@ export const OurOfferings = () => {
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
   const headingRef = useRef(null);
 
-  useEffect(() => {
-    // Heading animation
-    gsap.fromTo(
-      headingRef.current,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: headingRef.current,
-          start: "top 80%",
-        },
-      }
-    );
-
-    // Cards animation (staggered)
-    gsap.fromTo(
-      cardsRef.current,
-      { y: 50, opacity: 0 },
-      {
-        y: 0,
-        opacity: 1,
-        duration: 1,
-        stagger: 0.2,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top 85%",
-        },
-      }
-    );
-  }, []);
-
   return (
     <div className="min-h-screen md:w-[80%] lg:w-[55%] mx-auto p-6" ref={containerRef}>
       <h1

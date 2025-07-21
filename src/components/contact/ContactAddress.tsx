@@ -6,34 +6,34 @@ const locations = [
   {
     id: 1,
     city: "Hisar, Haryana",
-    address: "Red Square Market, Haryana 125001",
-    phone: "+91- XXXXXXX793",
+    address: "Ground and lower ground floor, Eminent Mall, Red Square Market, Mehta Nagar, Hisar, Haryana 125001.",
+    phone: "+91- 85700 83809",
   },
   {
     id: 2,
     city: "Kullu, Himachal Pradesh",
-    address: "Inter State Bus Terminal, Bus Stand Rd, Sarvari, Kullu, Himachal Pradesh 175101",
-    phone: "+91- XXXXXXX793",
+    address: "4th Floor, Kullu Central Mall, Inter-State Bus Terminal, Bus Stand Road, Sarvari, Kullu, Himachal Pradesh 175101",
+    phone: "+91- 98054 79800",
   },
   {
     id: 3,
     city: "Coimbatore, Tamil Nadu",
     address:
-      "Sri Hari Mills, SRK Miraj cinemas, Kamachipuram, Coimbatore, Tamil Nadu 641016",
-    phone: "+91- XXXXXXX793",
+      "SRK Arcade, Kamakshipuram near Cambodia mills, Trichy road, Ondipudur post, Pallpalayam, Coimbatore, TN- 641016",
+    phone: "+91- 96298 65168",
   },
   {
     id: 4,
     city: "Calicut, Kerala",
     address:
-      "1526/63, Mavoor Rd, opposite New Bus Stand, Arayidathupalam, Kozhikode, Kerala 673004",
-    phone: "+91- XXXXXXX793",
+      "2nd and 4th Floor, RP Blue Diamond Mall, Mavoor Rd, opposite New Bus Stand, Parayancheri, Kottooli, Kozhikode, Kerala 673004",
+    phone: "+91- 89435 50691",
   },
 ];
 
 export const ContactAddress = () => {
   return (
-    <div className="flex flex-col items-center space-y-5 gap-6 py-12 px-4">
+    <div className="flex flex-col items-center space-y-5 gap-6 px-4">
       {locations.map((location) => (
         <div
           key={location.id}

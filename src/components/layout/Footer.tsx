@@ -48,13 +48,11 @@ export const Footer = () => {
           <div className="md:px-10 flex flex-col space-y-2">
             <p className="text-lg font-semibold my-1">Address</p>
             <p className="text-md font-normal text-white/90">
-              DoodlesDodling Entertainment Private Limited, Office Number-5B103,
-              Spectrum Tower, 5th floor, B-Wing, Chincholi Bundar Road,
-              Mindspace, Malad West, Mumbai - 400064
+               Doodlesdodling Entertainment Private Limited, Teloz Spaces, 12A, 3rd Floor, Techniplex - II, Off, Veer Savarkar Flyover, Goregaon West, Mumbai, Maharashtra 400062
             </p>
             <p>
               <IoCall className="inline-block mr-2" />
-              +91 12345 67890
+              +91 85700 83809
             </p>
             <p>
               <IoMdMail className="inline-block mr-2" />
@@ -70,28 +68,28 @@ export const Footer = () => {
         <div className="flex justify-center items-center">
           <div className="flex justify-center items-center space-x-4 mt-4">
             <a
-              href="https://wa.me/1234567890"
+              href="https://wa.me/918570083809"
               target="_blank"
               rel="noopener noreferrer"
             >
               <IoLogoWhatsapp className="text-2xl hover:scale-110 transition-all" />
             </a>
             <a
-              href="https://www.instagram.com"
+              href=" https://www.instagram.com/doodles.india/?next=%2F"
               target="_blank"
               rel="noopener noreferrer"
             >
               <RiInstagramFill className="text-2xl hover:scale-110 transition-all" />
             </a>
             <a
-              href="https://www.linkedin.com"
+              href="https://linktr.ee/DoodlesDodling"
               target="_blank"
               rel="noopener noreferrer"
             >
               <IoLogoLinkedin className="text-2xl hover:scale-110 transition-all" />
             </a>
             <a
-              href="https://www.facebook.com"
+              href="https://www.facebook.com/profile.php?id=61556630883390"
               target="_blank"
               rel="noopener noreferrer"
             >
