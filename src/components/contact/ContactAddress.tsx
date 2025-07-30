@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
+import Link from "next/link";
 
 const locations = [
   {
@@ -8,12 +9,14 @@ const locations = [
     city: "Hisar, Haryana",
     address: "Ground and lower ground floor, Eminent Mall, Red Square Market, Mehta Nagar, Hisar, Haryana 125001.",
     phone: "+91- 85700 83809",
+    link: "https://maps.app.goo.gl/oRhcYL9VUiCaeGo29"
   },
   {
     id: 2,
     city: "Kullu, Himachal Pradesh",
     address: "4th Floor, Kullu Central Mall, Inter-State Bus Terminal, Bus Stand Road, Sarvari, Kullu, Himachal Pradesh 175101",
     phone: "+91- 98054 79800",
+    link: "https://maps.app.goo.gl/XqoHAn4jLXPJrNcP6"
   },
   {
     id: 3,
@@ -21,6 +24,7 @@ const locations = [
     address:
       "SRK Arcade, Kamakshipuram near Cambodia mills, Trichy road, Ondipudur post, Pallpalayam, Coimbatore, TN- 641016",
     phone: "+91- 96298 65168",
+    link: "https://maps.app.goo.gl/e55Tm3JEu2TJ1nJr7"
   },
   {
     id: 4,
@@ -28,6 +32,7 @@ const locations = [
     address:
       "2nd and 4th Floor, RP Blue Diamond Mall, Mavoor Rd, opposite New Bus Stand, Parayancheri, Kottooli, Kozhikode, Kerala 673004",
     phone: "+91- 89435 50691",
+    link: "https://maps.app.goo.gl/tjbnn6Sgq5DQ89Qw5"
   },
 ];
 
@@ -39,10 +44,13 @@ export const ContactAddress = () => {
           key={location.id}
           className="bg-[#111111] py-5 text-white p-5 rounded-lg w-full max-w-md shadow-[0_0_30px_#8e2de250]"
         >
-          <div className="flex items-center gap-2 text-lg font-semibold mb-2">
-            <FaMapMarkerAlt className="text-white" />
-            <span className="underline underline-offset-4">{location.city}</span>
-          </div>
+          <Link href={location.link}>
+            <div className="flex items-center gap-2 text-lg font-semibold mb-2">
+              <FaMapMarkerAlt className="text-white" />
+              <span className="underline underline-offset-4">{location.city}</span>
+            </div>
+          </Link>
+
           <p className="text-lg my-2">{location.address}</p>
           <div className="flex items-center gap-2 text-md">
             <FaPhoneAlt className="text-white" />

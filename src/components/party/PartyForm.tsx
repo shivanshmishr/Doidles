@@ -34,7 +34,7 @@ const PartyForm = () => {
     };
 
     return (
-        <div className="flex flex-col justify-center items-center mt-20 mb-10 px-4">
+        <div className="flex flex-col justify-center items-center mt-4 mb-10 px-4">
             <h1 className="text-center text-white text-2xl md:text-4xl font-semibold my-10">
                 Need more information then write to us
             </h1>

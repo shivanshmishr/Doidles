@@ -51,14 +51,14 @@ const OurTeamPage = () => {
 
       {/* First Member - Fade from Left */}
       <FadeInSection direction="left">
-        <div className="flex flex-col w-full md:flex-row justify-between items-center gap-10">
+        <div className="flex flex-col w-full md:flex-row justify-between gap-10">
           <div className="md:w-[40%]">
             <Image
               src="/images/amitsharma.png"
               alt="Amit Sharma"
               width={600}
               height={600}
-              className="w-full md:h-[40vh] object-contain"
+              className="w-[60%] mx-auto md:h-[40vh] object-contain"
             />
             <h1 className="text-3xl text-center font-semibold my-1">
               Amit Sharma
@@ -67,7 +67,7 @@ const OurTeamPage = () => {
               Co-Founder - Doodles
             </p>
           </div>
-          <div className="text-lg md:text-xl font-medium md:w-[60%]">
+          <div className="text-lg md:text-xl font-medium text-center md:text-left md:w-[60%] md:mt-20">
             <p>
               Amit Sharma has 23+ years in cinema, retail, and hospitality.
               Ex-MD of Miraj Cinemas; scaled it to 250+ screens, India’s 3rd
@@ -80,14 +80,14 @@ const OurTeamPage = () => {
 
       {/* Second Member - Fade from Right */}
       <FadeInSection direction="right">
-        <div className="flex flex-col w-full md:flex-row-reverse justify-between items-center gap-10">
+        <div className="flex flex-col w-full md:flex-row-reverse justify-between gap-10">
           <div className="md:w-[40%]">
             <Image
               src="/images/amitsharma.png"
               alt="Babulnath Dubey"
               width={600}
               height={600}
-              className="w-full md:h-[40vh] object-contain"
+              className="w-[60%] mx-auto md:h-[40vh] object-contain"
             />
             <h1 className="text-3xl text-center font-semibold my-2">
               Babulnath Dubey
@@ -96,14 +96,9 @@ const OurTeamPage = () => {
               Co-Founder - Doodles
             </p>
           </div>
-          <div className="text-xl font-medium md:w-[60%]">
+          <div className="text-lg md:text-xl font-medium text-center md:text-left md:w-[60%] md:mt-20">
             <p>
-              Bhavesh Shah: 25+ years as India’s top amusement equipment
-              distributor and consultant. Trusted by clients across India and
-              internationally, including Tanzania. Among the only industry
-              experts with comprehensive expertise in arcades, trampolines,
-              bowling, snow worlds, and VR, delivering unparalleled entertainment
-              solutions.
+              Babulnath Dubey has 30+ years of experience in the gaming industry. Formerly with Essel World and Giggles, excelling in game development and operations. His expertise is in crafting immersive, age-inclusive customer experiences.
             </p>
           </div>
         </div>
@@ -111,23 +106,24 @@ const OurTeamPage = () => {
 
       {/* Third Member - Fade from Left */}
       <FadeInSection direction="left">
-        <div className="flex flex-col w-full md:flex-row justify-between items-center gap-10">
+        <div className="flex flex-col w-full md:flex-row justify-between gap-10">
           <div className="md:w-[40%]">
             <Image
               src="/images/amitsharma.png"
               alt="Bhavesh Shah"
               width={600}
               height={600}
-              className="w-full md:h-[40vh] object-contain"
+              className="w-[60%] mx-auto md:h-[40vh] object-contain"
             />
-            <h1 className="text-3xl text-center font-semibold my-1">
-              Bhavesh Shah
-            </h1>
-            <p className="text-[#D214E6] text-center font-medium text-lg">
-              Co-Founder - Doodles
-            </p>
+              <h1 className="text-3xl text-center font-semibold my-1">
+                Bhavesh Shah
+              </h1>
+              <p className="text-[#D214E6] text-center font-medium text-lg">
+                Co-Founder - Doodles
+              </p>
+
           </div>
-          <div className="text-lg md:text-xl font-medium md:w-[60%]">
+          <div className="text-lg md:text-xl font-medium text-center md:text-left md:w-[60%] md:mt-20">
             <p>
               Bhavesh Shah: 25+ years as India’s top amusement equipment
               distributor and consultant. Trusted by clients across India and

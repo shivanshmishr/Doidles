@@ -47,7 +47,7 @@ export const Footer = () => {
           <h1 className="text-xl font-semibold my-4">Contact Us</h1>
           <div className="md:px-10 flex flex-col space-y-2">
             <p className="text-lg font-semibold my-1">Address</p>
-            <p className="text-md font-normal text-white/90">
+            <p className="text-md text-center md:text-left font-normal text-white/90">
                Doodlesdodling Entertainment Private Limited, Teloz Spaces, 12A, 3rd Floor, Techniplex - II, Off, Veer Savarkar Flyover, Goregaon West, Mumbai, Maharashtra 400062
             </p>
             <p>

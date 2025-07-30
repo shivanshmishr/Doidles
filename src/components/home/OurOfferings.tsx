@@ -48,11 +48,11 @@ export const OurOfferings = () => {
               </div>
 
               {/* Overlay */}
-              <div className="absolute inset-0 backdrop-blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-[#a020f041] backdrop-blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
 
               {/* Hover text */}
               <div
-                className={`absolute inset-0 flex justify-center transition-all duration-300 ${
+                className={`absolute z-20 inset-0 flex justify-center transition-all duration-300 ${
                   hoveredCard === item.id ? "opacity-100" : "opacity-0"
                 }`}
               >
