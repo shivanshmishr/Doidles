@@ -30,12 +30,12 @@ export const TestimonialSection = () => {
         {/* Left Section */}
         <div className="md:w-[50%] relative" ref={leftRef}>
           <Image
-                width={100}
-                height={100}
-                src="/testimonial/testi1.png"
-                alt="testi1"
-                className="absolute w-16 h-16 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-2 rotate-0 bg-[#F6D3BD] rounded-full md:w-28 md:h-28"
-              />
+            width={100}
+            height={100}
+            src="/testimonial/testi1.png"
+            alt="testi1"
+            className="absolute w-16 h-16 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-2 rotate-0 bg-[#F6D3BD] rounded-full md:w-28 md:h-28"
+          />
           <div className="outer-spin border-2 flex flex-col justify-center items-center border-white/40 w-[40vh] h-[40vh] md:w-[60vh] md:h-[60vh] rounded-full mx-auto relative">
             <Image
               width={100}
@@ -72,7 +72,7 @@ export const TestimonialSection = () => {
                 alt="testi3"
                 className="absolute rotate-0 -bottom-6 md:-bottom-10 w-12 h-12 p-1 bg-[#C0D9BF] rounded-full md:w-20 md:h-20"
               />
-              
+
             </div>
           </div>
         </div>

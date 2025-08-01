@@ -48,7 +48,7 @@ export const OurOfferings = () => {
               </div>
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-[#a020f041] backdrop-blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
+              <div className="absolute inset-0 bg-[#a020f0a1] backdrop-blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
 
               {/* Hover text */}
               <div

@@ -144,8 +144,7 @@ const PartySectionAnimation = () => {
               />
               <div
                 className={`
-                  w-full absolute gamingFont text-[1.75rem] md:text-[2.5rem] text-left text-white font-semibold mix-blend-screen
-                  ${index % 2 === 0 ? "bottom-0 md:bottom-10 -right-1/2" : "top-0 md:top-10 -left-1/3"}
+                  w-full gamingFont text-center text-[1.75rem] md:text-[2.5rem] text-white font-semibold mix-blend-screen
                 `}
               >
                 {card.title}

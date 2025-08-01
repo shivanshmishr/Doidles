@@ -23,7 +23,7 @@ export const PartyHeader = () => {
 
   return (
     <div className="bg-black px-4">
-      <h1 className="gamingFont text-[#4E035A] text-4xl text-center font-extrabold mb-12">
+      <h1 className="gamingFont text-[#D214E6] text-4xl text-center font-extrabold mt-12 mb-4">
         Party / Event
       </h1>
 
