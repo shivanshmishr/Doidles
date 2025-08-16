@@ -64,9 +64,9 @@ export const AboutSection = () => {
         {/* Absolute Ring Image */}
         <motion.div
           ref={ringRef}
-          initial={{ scale: 0 }}
-          animate={ringInView ? { scale: 1 } : {}}
-          transition={{ duration: 1.2, ease: "easeOut" }}
+          initial={{ scale: 0, opacity: 0 }}
+          animate={{ scale: [0, 1.2, 0], opacity: [0, 1, 0] }}
+          transition={{ duration: 3, ease: "easeInOut", repeat: Infinity }}
           className="w-[40vh] h-[40vh] absolute left-1/2 -translate-x-1/2 top-[50%] -translate-y-1/2 z-0"
         >
           <Image
@@ -77,6 +77,7 @@ export const AboutSection = () => {
             className="w-full h-full object-contain"
           />
         </motion.div>
+
 
         {/* Vision */}
         <motion.div

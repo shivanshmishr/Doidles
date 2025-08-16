@@ -40,24 +40,27 @@ export const ContactAddress = () => {
   return (
     <div className="flex flex-col items-center space-y-5 gap-6 px-4">
       {locations.map((location) => (
-        <div
-          key={location.id}
-          className="bg-[#111111] py-5 text-white p-5 rounded-lg w-full max-w-md shadow-[0_0_30px_#8e2de250]"
-        >
-          <Link href={location.link}>
+        <Link href={location.link}>
+          <div
+            key={location.id}
+            className="bg-[#111111] py-5 text-white p-5 rounded-lg w-full max-w-md shadow-[0_0_30px_#8e2de250]"
+          >
+
             <div className="flex items-center gap-2 text-lg font-semibold mb-2">
               <FaMapMarkerAlt className="text-white" />
               <span className="underline underline-offset-4">{location.city}</span>
             </div>
-          </Link>
 
-          <p className="text-lg my-2">{location.address}</p>
-          <div className="flex items-center gap-2 text-md">
-            <FaPhoneAlt className="text-white" />
-            <span>{location.phone}</span>
+            <p className="text-lg my-2">{location.address}</p>
+            <div className="flex items-center gap-2 text-md">
+              <FaPhoneAlt className="text-white" />
+              <span>{location.phone}</span>
+            </div>
           </div>
-        </div>
+
+        </Link>
       ))}
     </div>
+
   );
 };

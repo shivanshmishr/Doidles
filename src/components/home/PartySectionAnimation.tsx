@@ -132,7 +132,7 @@ const PartySectionAnimation = () => {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-4"
+              className="absolute w-[90%] md:w-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col md:gap-4"
             >
               <Image
                 src={card.image}
@@ -144,7 +144,7 @@ const PartySectionAnimation = () => {
               />
               <div
                 className={`
-                  w-full gamingFont text-center text-[1.75rem] md:text-[2.5rem] text-white font-semibold mix-blend-screen
+                  w-full gamingFont text-center mt-2 text-[1.5rem] md:text-[2.5rem] text-white font-semibold mix-blend-screen
                 `}
               >
                 {card.title}

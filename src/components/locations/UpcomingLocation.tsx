@@ -1,81 +1,181 @@
 "use client";
 import React from "react";
-
-const data = [
-  {
-    left: (
-      <div className="inline-block text-md md:text-xl bg-[#4E035A] px-4 py-2 rounded-lg font-semibold">
-        Maharashtra
-      </div>
-    ),
-    right: (
-      <div className="space-y-1 text-md md:text-xl text-left">
-        <div>Mumbai</div>
-        <div>Ambe Jogai</div>
-        <div>Akola</div>
-      </div>
-    ),
-  },
-  {
-    left: <div className="text-md md:text-xl">Hyderabad</div>,
-    right: (
-      <div className="inline-block text-md md:text-xl bg-[#4E035A] px-4 py-2 rounded-lg font-semibold">
-        Telangana
-      </div>
-    ),
-  },
-  {
-    left: (
-      <div className="inline-block text-md md:text-xl bg-[#4E035A] px-4 py-2 rounded-lg font-semibold">
-        Haryana
-      </div>
-    ),
-    right: <div className="text-md md:text-xl">Gurugram</div>,
-  },
-  {
-    left: (
-      <div className="space-y-1 text-md md:text-xl text-right">
-        <div>Sirhind</div>
-        <div>Patiala</div>
-        <div>Ambala</div>
-      </div>
-    ),
-    right: (
-      <div className="inline-block bg-[#4E035A] text-md md:text-xl px-4 py-2 rounded-lg font-semibold">
-        Punjab
-      </div>
-    ),
-  },
-];
+import { motion, Variants } from "framer-motion";
+import { Focus } from "lucide-react";
+import { RiFocus2Fill } from "react-icons/ri";
 
 const UpcomingLocationSection = () => {
+  const locations = [
+    {
+      state: "Maharashtra",
+      cities: ["Mumbai", "Ambe Jogai", "Akola"],
+      color: "from-purple-600 to-purple-400"
+    },
+    {
+      state: "Telangana", 
+      cities: ["Hyderabad"],
+      color: "from-purple-600 to-purple-400"
+    },
+    {
+      state: "Haryana",
+      cities: ["Gurugram"],
+      color: "from-purple-600 to-purple-400"
+    },
+    {
+      state: "Punjab",
+      cities: ["Patiala", "Sirhind", "Ambala"],
+      color: "from-purple-600 to-purple-400"
+    }
+  ];
+
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.3,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { 
+      opacity: 0, 
+      y: 50 
+    },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+
+  const lineVariants: Variants = {
+    hidden: { scaleX: 0 },
+    visible: { 
+      scaleX: 1,
+      transition: {
+        duration: 1.5,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <div className="bg-black text-white py-10 relative">
-      <h2 className="text-3xl text-center md:text-3xl font-semibold my-10">
+    <div className="bg-black text-white py-10 px-4 relative overflow-hidden">
+      <motion.h2 
+        className="text-3xl text-center md:text-4xl font-semibold mb-16"
+        initial={{ opacity: 0, y: -30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
         Upcoming location
-      </h2>
+      </motion.h2>
 
-      <div className="relative flex flex-col items-center">
-        {/* Center vertical line */}
-        <div className="absolute left-1/2 top-0 bottom-0 w-[2px] bg-gray-600 z-0" />
-
-        {/* Timeline items */}
-        <div className="flex flex-col space-y-16 z-10 w-full">
-          {data.map((row, index) => (
-            <div key={index} className="flex justify-center gap-5 items-start relative">
-              {/* Left */}
-              <div className="w-1/3 text-right pr-4">{row.left}</div>
-
-              {/* Dot */}
-              <div className="w-0 relative">
-                <div className="w-3 h-3 md:w-5 md:h-5 bg-[#4E035A] rounded-full absolute left-1/2 -translate-x-1/2 top-1" />
-              </div>
-
-              {/* Right */}
-              <div className="w-1/3 text-left pl-4">{row.right}</div>
-            </div>
-          ))}
+      {/* Desktop Horizontal Timeline */}
+      <div className="hidden lg:block max-w-6xl mx-auto">
+        <div className="relative">
+          {/* Horizontal Line */}
+          <motion.div 
+            className="absolute top-2 left-0 right-0 h-0.5 bg-white/50 origin-left"
+            variants={lineVariants}
+            initial="hidden"
+            animate="visible"
+          />
+          
+          {/* Timeline Items */}
+          <motion.div 
+            className="flex justify-between items-start relative"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {locations.map((location, index) => (
+              <motion.div
+                key={index}
+                className="flex flex-col items-center relative"
+                variants={itemVariants}
+              >
+                {/* Focus Icon */}
+                <div className="w-6 h-6 mb-6 relative z-10 flex items-center justify-center">
+                  <RiFocus2Fill className="w-6 h-6 text-purple-400" />
+                </div>
+                
+                {/* Location Card */}
+                <div className="bg-white/10 backdrop-blur-sm border border-gray-700 rounded-xl p-6 min-w-[200px] hover:border-purple-500 transition-colors duration-300">
+                  <h3 className="text-purple-400 text-2xl font-semibold mb-3 text-center">
+                    {location.state}
+                  </h3>
+                  <div className="space-y-2">
+                    {location.cities.map((city, cityIndex) => (
+                      <div key={cityIndex} className="text-white text-center text-md">
+                        {city}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
+      </div>
+
+      {/* Mobile/Tablet Vertical Timeline */}
+      <div className="block lg:hidden max-w-md mx-auto">
+        <div className="relative">
+          {/* Vertical Line */}
+          <motion.div 
+            className="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-purple-600 to-purple-400 origin-top"
+            variants={lineVariants}
+            initial="hidden"
+            animate="visible"
+          />
+          
+          {/* Timeline Items */}
+          <motion.div 
+            className="space-y-8 relative"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+          >
+            {locations.map((location, index) => (
+              <motion.div
+                key={index}
+                className="flex items-center relative"
+                variants={itemVariants}
+              >
+                {/* Focus Icon */}
+                <div className="w-6 h-6 relative z-10 mr-6 flex items-center justify-center">
+                  <Focus className="w-6 h-6 text-purple-400" />
+                </div>
+                
+                {/* Location Card */}
+                <div className="bg-gray-900/80 backdrop-blur-sm border border-gray-700 rounded-xl p-4 flex-1 hover:border-purple-500 transition-colors duration-300">
+                  <h3 className="text-purple-400 text-lg font-semibold mb-2">
+                    {location.state}
+                  </h3>
+                  <div className="space-y-1">
+                    {location.cities.map((city, cityIndex) => (
+                      <div key={cityIndex} className="text-white text-sm">
+                        {city}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Background Decoration */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-purple-500 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-1/4 w-24 h-24 bg-purple-600 rounded-full blur-2xl" />
       </div>
     </div>
   );
