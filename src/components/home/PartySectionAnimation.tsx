@@ -6,16 +6,18 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { homePartySection } from "@/data/homePartySection";
 
+const PHASE_A_END = 0.2; // stack
+const PHASE_B_END = 0.4; // disperse
+
 const PartySectionAnimation = () => {
   const stickySectionRef = useRef(null);
   const cardsRef = useRef<Array<HTMLDivElement | null>>([]);
   const countContainerRef = useRef(null);
 
   useEffect(() => {
-    // Register GSAP ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize Lenis for smooth scrolling
+    // Lenis (no 'smooth' option in new versions)
     const lenis = new Lenis();
     lenis.on("scroll", ScrollTrigger.update);
     gsap.ticker.add((time) => {
@@ -29,7 +31,6 @@ const PartySectionAnimation = () => {
     const totalCards = cards.length;
     const stickyHeight = window.innerHeight * 7;
 
-    // ScrollTrigger for pinning the steps section
     ScrollTrigger.create({
       trigger: stickySection,
       start: "top top",
@@ -47,15 +48,65 @@ const PartySectionAnimation = () => {
         : window.innerWidth * 2.5;
     };
 
+    // Your original arc constants
     const arcAngle = Math.PI * 0.4;
     const startAngle = Math.PI / 2 - arcAngle / 2;
 
     function positionCards(progress = 0) {
       const radius = getRadius();
+
+      // ---- Phase A: stack (0.0 → 0.2) ----
+      if (progress <= PHASE_A_END) {
+        cards.forEach((card, i) => {
+          if (!card) return;
+          gsap.set(card, {
+            x: 0,
+            y: 0,
+            rotation: 0,
+            scale: 1,
+            opacity: 1,
+            zIndex: totalCards - i,
+            transformOrigin: "center center",
+          });
+        });
+        return;
+      }
+
+      // ---- Phase B: disperse (0.2 → 0.5) ----
+      if (progress <= PHASE_B_END) {
+        const disperseProgress =
+          (progress - PHASE_A_END) / (PHASE_B_END - PHASE_A_END); // 0..1
+        cards.forEach((card, i) => {
+          if (!card) return;
+          const angle = (i / totalCards) * Math.PI * 2; // full circle
+          const r = 300 + disperseProgress * 200;
+
+          const x = Math.cos(angle) * r * disperseProgress;
+          const y = Math.sin(angle) * r * disperseProgress;
+
+          gsap.set(card, {
+            x,
+            y,
+            rotation: i * 2 + disperseProgress * 180,
+            scale: 1 - disperseProgress * 0.5,
+            opacity: 1 - disperseProgress, // fade out
+            zIndex: totalCards - i,
+            transformOrigin: "center center",
+          });
+        });
+        return;
+      }
+
+      // ---- Phase C: ORIGINAL arc reveal (0.5 → 1.0) ----
+      // Remap progress back to 0..1, then run your old math unchanged.
+      const arcProgress = (progress - PHASE_B_END) / (1 - PHASE_B_END); // 0..1
       const totalTravel = 1 + totalCards / 7.5;
-      const adjustedProgress = (progress * totalTravel - 1) * 0.75;
+      const adjustedProgress = (arcProgress * totalTravel - 1) * 0.75;
 
       cards.forEach((card, i) => {
+        if (!card) return;
+
+        // ORIGINAL “one-by-one” sequencing:
         const normalizedProgress = (totalCards - 1 - i) / totalCards;
         const cardProgress = normalizedProgress + adjustedProgress;
         const angle = startAngle + arcAngle * cardProgress;
@@ -66,29 +117,27 @@ const PartySectionAnimation = () => {
 
         gsap.set(card, {
           x: x,
-          y: -y + radius,
-          rotation: -rotation,
+          y: -y + radius,     // your original Y mapping
+          rotation: -rotation, // your original rotation mapping
+          scale: 1,
+          opacity: 1,         // fully visible in arc phase
+          zIndex: totalCards - i,
           transformOrigin: "center center",
         });
       });
     }
 
+    // initial render
     positionCards(0);
 
+    // (kept) intersection observer for your counter UI
     let currentCardIndex = 0;
-
-    const options = {
-      root: null,
-      rootMargin: "0% 0%",
-      threshold: 0.5,
-    };
-
+    const options = { root: null, rootMargin: "0% 0%", threshold: 0.5 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           let cardIndex = cards.indexOf(entry.target as HTMLDivElement);
           currentCardIndex = cardIndex;
-
           const targetY = 100 - currentCardIndex * 100;
           gsap.to(countContainer, {
             y: targetY,
@@ -101,15 +150,12 @@ const PartySectionAnimation = () => {
     }, options);
 
     cards.forEach((card) => {
-      if (card) {
-        observer.observe(card);
-      }
+      if (card) observer.observe(card);
     });
 
     const handleResize = () => positionCards(0);
     window.addEventListener("resize", handleResize);
 
-    // Cleanup on unmount
     return () => {
       window.removeEventListener("resize", handleResize);
       observer.disconnect();
@@ -137,25 +183,21 @@ const PartySectionAnimation = () => {
               <Image
                 src={card.image}
                 alt={`Card ${index + 1}`}
-                width={500}
-                height={490}
-                className="aspect-square w-full h-full md:w-[55vh] md:h-[55vh] rounded-lg object-cover"
+                width={250}
+                height={230}
+                className="aspect-square w-full h-full md:w=[55vh] md:h=[55vh] rounded-lg object-cover"
                 priority={index === 0}
               />
-              <div
-                className={`
-                  w-full gamingFont text-center mt-2 text-[1.5rem] md:text-[2.5rem] text-white font-semibold mix-blend-screen
-                `}
-              >
+              <div className="w-full gamingFont text-center mt-2 text-[1.5rem] md:text-[2.5rem] text-white font-semibold mix-blend-screen">
                 {card.title}
               </div>
             </div>
           ))}
         </div>
 
-        {/* Title + Step Counter */}
-        <div className="flex flex-col m-8 steps-counter">
-          <div className="relative  overflow-hidden">
+        {/* Title */}
+        <div className="flex flex-col mb-10 steps-counter">
+          <div className="relative overflow-hidden">
             <h1 className="w-full text-center text-white uppercase gamingFont font-black text-5xl leading-none tracking-tight">
               GAMES
             </h1>

@@ -42,9 +42,9 @@ export const HeroSection = () => {
         ) : (
           <iframe
             ref={iframeRef}
-            src="/dinogame/index.html"
+            src="/dinoo/dino_fit.html"
             title="Dino Game"
-            className="w-full h-[50vh] md:h-[70vh] overflow-y-hidden border-2 border-white/40 rounded-xl"
+            className="w-full h-[30vh] md:h-[50vh] overflow-y-hidden border-2 border-white/40 rounded-xl"
           />
         )}
       </div>

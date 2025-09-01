@@ -30,9 +30,10 @@ export const OurOfferings = () => {
             className="relative w-[100%] mx-auto break-inside-avoid group cursor-pointer"
             onMouseEnter={() => setHoveredCard(item.id)}
             onMouseLeave={() => setHoveredCard(null)}
+            onClick={() => setHoveredCard(hoveredCard === item.id ? null : item.id)} // ✅ add this
             ref={(el) => { cardsRef.current[index] = el; }}
           >
-            <div className="w-full h-full relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-[#A020F099] border-2 border-white/50 transition-all duration-300 hover:shadow-3xl">
+            <div className="w-full h-full relative overflow-hidden rounded-2xl shadow-2xl hover:shadow-[#c872fd] border-2 border-white/50 transition-all duration-300 hover:shadow-3xl">
               <Image
                 src={item.src}
                 alt={item.alt}
@@ -48,13 +49,16 @@ export const OurOfferings = () => {
               </div>
 
               {/* Overlay */}
-              <div className="absolute inset-0 bg-[#a020f0a1] backdrop-blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl z-10" />
+              <div
+                className={`absolute inset-0 bg-purple-500/60 rounded-2xl z-10 
+    transition-opacity duration-300 
+    ${hoveredCard === item.id ? "opacity-100" : "opacity-0"}`}
+              ></div>
 
               {/* Hover text */}
               <div
-                className={`absolute z-20 inset-0 flex justify-center transition-all duration-300 ${
-                  hoveredCard === item.id ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute z-20 inset-0 flex justify-center transition-all duration-300 ${hoveredCard === item.id ? "opacity-100" : "opacity-0"
+                  }`}
               >
                 <div className="flex flex-col items-center justify-center">
                   <span className="md:w-[80%] mx-auto text-white text-center font-bold text-[1.25rem]">

@@ -9,27 +9,28 @@ import {
 import { locations } from "@/data/locations";
 import { MapPin, Building } from "lucide-react";
 import DestinationCard from "./LocationDestinationCard";
+import Link from "next/link";
 
 const destinations = [
   {
-    image: "/images/offerings/games.png",
-    location: "Colorado, USA",
-    title: "Shadowpeak Canyon",
+    image: "/hisar.png",
+    location: "Haryana, In",
+    title: "Hisar",
   },
   {
-    image: "/images/offerings/games.png",
-    location: "Swiss Alps",
-    title: "Glacier Valley",
+    image: "/kullu.png",
+    location: "Himachal Pradesh, In",
+    title: "Kullu",
   },
   {
-    image: "/images/offerings/games.png",
-    location: "Amazon, Brazil",
-    title: "Emerald Forest",
+    image: "/callicut.png",
+    location: "Kerela, In",
+    title: "Calicut (Kozhikode)",
   },
   {
-    image: "/images/offerings/games.png",
-    location: "Sahara, Africa",
-    title: "Golden Dunes",
+    image: "/coaimbatoor.png",
+    location: "Tamil Nadu, In",
+    title: "Coimbatore",
   },
 ];
 
@@ -73,7 +74,7 @@ const LocationHeroSection = () => {
               <div className="bg-purple-600/20 p-2 rounded-full mb-2">
                 <MapPin className="w-6 h-6 text-[#D214E6]" />
               </div>
-              <h3 className="text-xl font-semibold">9 States</h3>
+              <h3 className="text-xl font-semibold">04 States</h3>
             </div>
 
             {/* Branches */}
@@ -81,14 +82,16 @@ const LocationHeroSection = () => {
               <div className="bg-purple-600/20 p-2 rounded-full mb-2">
                 <Building className="w-6 h-6 text-[#D214E6]" />
               </div>
-              <h3 className="text-xl font-semibold">130 Branches</h3>
+              <h3 className="text-xl font-semibold">05 Branches</h3>
             </div>
           </div>
 
           {/* Button */}
-          <button className="bg-[#D214E6] gamingFont text-white font-medium px-6 py-3 rounded-full shadow-lg transition">
-            Our Branch network
-          </button>
+          <Link href="/contact">
+            <button className="bg-[#D214E6] gamingFont text-white font-medium px-6 py-3 rounded-full shadow-lg transition cursor-pointer">
+              Our Branch network
+            </button>
+          </Link>
         </div>
 
         {/* RIGHT SIDE MAP */}
@@ -148,7 +151,7 @@ const LocationHeroSection = () => {
         </div>
       </div>
 
-      <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* <div className="my-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {destinations.map((dest, index) => (
           <DestinationCard
             key={index}
@@ -157,7 +160,7 @@ const LocationHeroSection = () => {
             title={dest.title}
           />
         ))}
-      </div>
+      </div> */}
 
     </div>
   );

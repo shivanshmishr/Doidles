@@ -1,18 +1,17 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; // Add this if not already created
+import { Textarea } from "@/components/ui/textarea";
 
 type FormValues = {
     name: string;
@@ -21,6 +20,9 @@ type FormValues = {
 };
 
 const ContactForm = () => {
+    const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+    const [loading, setLoading] = useState(false);
+
     const form = useForm<FormValues>({
         defaultValues: {
             name: "",
@@ -29,9 +31,28 @@ const ContactForm = () => {
         },
     });
 
-    const onSubmit = (data: FormValues) => {
-        console.log("Form Data:", data);
-        form.reset();
+    const onSubmit = async (data: FormValues) => {
+        setLoading(true);
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ ...data, source: "contact" }),
+            });
+
+            if (res.ok) {
+                setMessage({ type: "success", text: "Thank you! Your message has been sent." });
+                form.reset();
+            } else {
+                setMessage({ type: "error", text: "Failed to send message. Please try again." });
+            }
+        } catch (err) {
+            console.error(err);
+            setMessage({ type: "error", text: "Server error. Try again later." });
+        } finally {
+            setLoading(false);
+            setTimeout(() => setMessage(null), 9000); // auto-hide after 4s
+        }
     };
 
     return (
@@ -56,7 +77,7 @@ const ContactForm = () => {
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
-                            )} 
+                            )}
                         />
 
                         {/* Phone Number Field */}
@@ -109,12 +130,26 @@ const ContactForm = () => {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full py-3 rounded-md bg-purple-800 hover:bg-purple-900 text-white font-semibold transition-colors"
+                            disabled={loading}
+                            className={`w-full py-3 rounded-md font-semibold transition-colors ${loading
+                                ? "bg-purple-600 cursor-not-allowed"
+                                : "bg-purple-800 hover:bg-purple-900 text-white"
+                                }`}
                         >
-                            Send
+                            {loading ? "Sending..." : "Send"}
                         </button>
                     </form>
                 </Form>
+
+                {/* Success/Error Message */}
+                {message && (
+                    <p
+                        className={`mt-4 text-center font-medium ${message.type === "success" ? "text-purple-500" : "text-red-400"
+                            }`}
+                    >
+                        {message.text}
+                    </p>
+                )}
             </div>
         </div>
     );

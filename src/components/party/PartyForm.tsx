@@ -1,17 +1,16 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import {
     Form,
     FormControl,
-    FormDescription,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea"; // Add this if not already created
+import { Textarea } from "@/components/ui/textarea";
 
 type FormValues = {
     name: string;
@@ -20,6 +19,8 @@ type FormValues = {
 };
 
 const PartyForm = () => {
+    const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+
     const form = useForm<FormValues>({
         defaultValues: {
             name: "",
@@ -28,9 +29,26 @@ const PartyForm = () => {
         },
     });
 
-    const onSubmit = (data: FormValues) => {
-        console.log("Form Data:", data);
-        form.reset();
+    const onSubmit = async (data: FormValues) => {
+        try {
+            const res = await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(data),
+            });
+
+            if (res.ok) {
+                setMessage({ type: "success", text: "Thank you! Your query has been submitted." });
+                form.reset();
+            } else {
+                setMessage({ type: "error", text: "Something went wrong. Please try again." });
+            }
+        } catch (error) {
+            setMessage({ type: "error", text: "Server error. Try again later." });
+        }
+
+        // Auto-hide message after 4 seconds
+        setTimeout(() => setMessage(null), 9000);
     };
 
     return (
@@ -58,7 +76,7 @@ const PartyForm = () => {
                                     </FormControl>
                                     <FormMessage />
                                 </FormItem>
-                            )} 
+                            )}
                         />
 
                         {/* Phone Number Field */}
@@ -117,6 +135,16 @@ const PartyForm = () => {
                         </button>
                     </form>
                 </Form>
+
+                {/* Success/Error Message */}
+                {message && (
+                    <p
+                        className={`mt-4 text-center font-medium ${message.type === "success" ? "text-purple-500" : "text-red-400"
+                            }`}
+                    >
+                        {message.text}
+                    </p>
+                )}
             </div>
         </div>
     );
