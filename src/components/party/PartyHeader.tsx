@@ -6,19 +6,22 @@ import Image from "next/image";
 export const PartyHeader = () => {
 
   const birthdayBooking = [
-    { id: 1, img: "/partevents/img1.jpg" },
-    { id: 2, img: "/partevents/img2.jpg" },
-    { id: 3, img: "/partevents/img3.jpg" },
-    { id: 4, img: "/partevents/img4.jpg" },
-    { id: 5, img: "/partevents/img5.jpg" }
+    { id: 1, img: "/main/Birthday/1.jpg" },
+    { id: 2, img: "/main/Birthday/2.jpg" },
+    { id: 3, img: "/main/Birthday/3.jpg" },
+    { id: 4, img: "/main/Birthday/4.jpg" },
+    { id: 5, img: "/main/Birthday/6.png" },
+    { id: 6, img: "/main/Birthday/7.jpg" }
   ];
 
   const schoolPicnic = [
-    { id: 1, img: "/schoolpic/img1.jpg" },
-    { id: 2, img: "/schoolpic/img2.jpg" },
-    { id: 3, img: "/schoolpic/img3.jpg" },
-    { id: 4, img: "/schoolpic/img4.jpg" },
-    { id: 5, img: "/schoolpic/img5.jpg" },
+    { id: 1, img: "/main/School/1.jpg" },
+    { id: 2, img: "/main/School/2.png" },
+    { id: 3, img: "/main/School/3.jpg" },
+    { id: 4, img: "/main/School/4.jpg" },
+    { id: 5, img: "/main/School/5.jpg" },
+    { id: 6, img: "/main/School/6.jpg" },
+
   ];
 
   return (

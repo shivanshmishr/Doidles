@@ -58,7 +58,10 @@ export default function StatesCentersFlow() {
                             key={i}
                             className="relative flex flex-col items-center opacity-0 translate-y-12 animate-slideIn"
                             style={{ animationDelay: `${i * 200}ms` }}
-                            onClick={() => setExpanded(expanded === i ? null : i)} // toggle on click
+                            // 👇 handle both hover and click
+                            onClick={() => setExpanded(expanded === i ? null : i)}
+                            onMouseEnter={() => setExpanded(i)}
+                            onMouseLeave={() => setExpanded(null)}
                         >
                             <div className="relative w-50 h-50 rounded-full bg-gradient-to-br from-purple-600/90 to-gray-900 border border-purple-600/30 flex flex-col items-center justify-center shadow-lg hover:scale-105 hover:-translate-y-2 transition-all duration-500 cursor-pointer overflow-hidden">
                                 <Image
@@ -95,6 +98,7 @@ export default function StatesCentersFlow() {
                     ))}
                 </div>
             </div>
+
             <style>
                 {`
           @keyframes float {

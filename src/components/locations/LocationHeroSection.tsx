@@ -68,30 +68,30 @@ const LocationHeroSection = () => {
           </p>
 
           {/* Stats */}
-          <div className="flex flex-row gap-4 mb-10">
+          <div className="flex flex-row gap-10 mb-10">
             {/* States */}
             <div className="flex flex-col items-center">
               <div className="bg-purple-600/20 p-2 rounded-full mb-2">
-                <MapPin className="w-6 h-6 text-[#D214E6]" />
+                <MapPin className="w-8 h-8 text-[#D214E6]" />
               </div>
-              <h3 className="text-xl font-semibold">04 States</h3>
+              <h3 className="text-2xl font-semibold">04 States</h3>
             </div>
 
             {/* Branches */}
             <div className="flex flex-col items-center">
               <div className="bg-purple-600/20 p-2 rounded-full mb-2">
-                <Building className="w-6 h-6 text-[#D214E6]" />
+                <Building className="w-8 h-8 text-[#D214E6]" />
               </div>
-              <h3 className="text-xl font-semibold">05 Branches</h3>
+              <h3 className="text-2xl font-semibold">05 Branches</h3>
             </div>
           </div>
 
           {/* Button */}
-          <Link href="/contact">
+          {/* <Link href="/contact">
             <button className="bg-[#D214E6] gamingFont text-white font-medium px-6 py-3 rounded-full shadow-lg transition cursor-pointer">
               Our Branch network
             </button>
-          </Link>
+          </Link> */}
         </div>
 
         {/* RIGHT SIDE MAP */}

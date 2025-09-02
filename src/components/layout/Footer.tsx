@@ -41,15 +41,22 @@ export const Footer = () => {
             <Link href="/contact">
               <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Contact</li>
             </Link>
-            
+
           </ul>
         </div>
         <div className="flex flex-col pb-10 items-center md:border-r-2 border-white/20">
           <h1 className="text-xl font-semibold my-4">Our Offering</h1>
           <ul className="space-y-2 flex flex-col justify-center items-center">
-            <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Games</li>
-            <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Events</li>
-            <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Party Bookings</li>
+            <Link href="/games">
+              <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Games</li>
+            </Link>
+            <Link href="/party-events">
+              <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Events</li>
+            </Link>
+            <Link href="/party-events">
+              <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Party Bookings</li>
+            </Link>
+
             <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Offers</li>
           </ul>
         </div>
@@ -58,15 +65,20 @@ export const Footer = () => {
           <div className="md:px-10 flex flex-col space-y-2">
             <p className="text-lg font-semibold my-1">Address</p>
             <p className="text-md text-center md:text-left font-normal text-white/90">
-               Doodlesdodling Entertainment Private Limited, Teloz Spaces, 12A, 3rd Floor, Techniplex - II, Off, Veer Savarkar Flyover, Goregaon West, Mumbai, Maharashtra 400062
+              Doodlesdodling Entertainment Private Limited, Teloz Spaces, 12A, 3rd Floor, Techniplex - II, Off, Veer Savarkar Flyover, Goregaon West, Mumbai, Maharashtra 400062
             </p>
             <p>
               <IoCall className="inline-block mr-2" />
-              +91 85700 83809
+              <a href="tel:+918570083809" className="hover:underline">
+                +91 85700 83809
+              </a>
             </p>
+
             <p>
               <IoMdMail className="inline-block mr-2" />
-              info@doodlesdodling.com
+              <a href="mailto:info@doodlesdodling.com" className="hover:underline">
+                info@doodlesdodling.com
+              </a>
             </p>
           </div>
         </div>

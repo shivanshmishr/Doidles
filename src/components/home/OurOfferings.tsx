@@ -11,11 +11,12 @@ gsap.registerPlugin(ScrollTrigger);
 export const OurOfferings = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
   const containerRef = useRef(null);
-  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const cardsRef = useRef<(HTMLDivElement | HTMLAnchorElement | null)[]>([]);
+
   const headingRef = useRef(null);
 
   return (
-    <div className="min-h-screen md:w-[80%] lg:w-[55%] mx-auto p-6" ref={containerRef}>
+    <div className="min-h-screen md:w-[80%] lg:w-[95%] mx-auto p-6" ref={containerRef}>
       <h1
         ref={headingRef}
         className="gamingFont text-4xl text-center font-extrabold my-12"
@@ -23,10 +24,13 @@ export const OurOfferings = () => {
         OUR OFFERINGS
       </h1>
 
-      <div className="grid grid-cols md:grid-cols-2 gap-10 justify-center items-center">
+      <div className="grid grid-cols md:grid-cols-3 gap-10 justify-center items-center">
         {ourOfferings.map((item, index) => (
-          <div
+          <a
             key={item.id}
+            href={item.link}
+            target="_blank"
+            rel="noopener noreferrer"
             className="relative w-[100%] mx-auto break-inside-avoid group cursor-pointer"
             onMouseEnter={() => setHoveredCard(item.id)}
             onMouseLeave={() => setHoveredCard(null)}
@@ -76,7 +80,7 @@ export const OurOfferings = () => {
               {/* Glowing border effect */}
               <div className="absolute inset-0 rounded-2xl border-2 border-transparent group-hover:border-purple-400/50 transition-all duration-300" />
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

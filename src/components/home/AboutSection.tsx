@@ -29,7 +29,7 @@ export const AboutSection = () => {
           className="w-full md:w-[45%] relative h-full"
         >
           <Image
-            src="/images/aboutus.webp"
+            src="/main/whydoodles.jpg"
             alt="Founder"
             width={1080}
             height={1080}
@@ -47,13 +47,9 @@ export const AboutSection = () => {
         >
           <h2 className="gamingFont text-3xl font-extrabold mb-4">WHY DOODLES?</h2>
           <p className="text-[1rem] md:text-lg leading-relaxed text-gray-300">
-            Welcome to Doodles, a vibrant world of fun, learning, and adventure
-            for kids aged 5 to 15! Founded by Amit Sharma of Miraj Cinemas,
-            Doodles blends entertainment with development through a toddler
-            zone, trampoline park, VR games, arcade challenges, and more.
-            Designed to inspire creativity and social skills, Doodles offers a
-            safe, exciting space where play meets purpose, making it more than
-            just a gaming zone but a transformative experience.
+            Founded in 2023, Doodles set out with a bold vision to deliver premium family entertainment in tier 2 and tier 3 cities.
+            Thriving in our current operational locations, our journey reflects rapid growth and strong customer retention.
+            Our co-founders' expertise in gaming and deep understanding of tier 2 and 3 markets have greatly fueled our growth.
           </p>
         </motion.div>
       </div>
@@ -103,8 +99,7 @@ export const AboutSection = () => {
         >
           <h2 className="md:w-[20%] gamingFont text-3xl font-extrabold">MISSION</h2>
           <p className="md:w-[85%] text-md md:text-xl text-center md:text-left leading-relaxed text-gray-300">
-            At Doodles, our mission is to deliver safe, hygienic, and engaging gaming experiences with dedicated support throughout. As a pioneering Indian gaming zone, we align with the Make in India vision, bringing the joy of gaming nationwide.
-          </p>
+            At Doodles, our mission is to deliver safe, hygienic, and engaging gaming experiences with dedicated support throughout. As an Indian gaming zone, we align with the Make in India vision, bringing the joy of gaming nationwide.          </p>
         </motion.div>
       </div>
     </div>

@@ -28,4 +28,12 @@ export const locations = [
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.1891504333134!2d77.05798747479496!3d11.002929254975497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba857b203ac51f5%3A0x84b28d7083bac205!2sSRK%20Miraj%20cinemas!5e1!3m2!1sen!2sin!4v1753865937592!5m2!1sen!2sin",
   },
+  {
+  id: 5,
+  name: "Sirsa, Haryana",
+  styles: "top-[22%] left-[27%]",
+  iframeSrc:
+    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.6540125885394!2d75.12988857379682!3d29.529566742784887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39114fbdddaf73cb%3A0xc789c851b2ac61f8!2sOHM%20Cine%20Garden%20%26%20Shopping%20Complex!5e1!3m2!1sen!2sin!4v1756811291339!5m2!1sen!2sin",
+}
+
 ];
