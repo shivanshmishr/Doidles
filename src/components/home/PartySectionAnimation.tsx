@@ -178,20 +178,23 @@ const PartySectionAnimation = () => {
               ref={(el) => {
                 cardsRef.current[index] = el;
               }}
-              className="absolute w-[90%] md:w-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col md:gap-4"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"
             >
-              <Image
-                src={card.image}
-                alt={`Card ${index + 1}`}
-                width={250}
-                height={230}
-                className="aspect-square w-full h-full md:w-[55vh] md:h-[55vh] rounded-lg object-cover"
-                priority={index === 0}
-              />
+              <div className="w-[250px] h-[250px] md:w-[55vh] md:h-[55vh] rounded-lg overflow-hidden">
+                <Image
+                  src={card.image}
+                  alt={`Card ${index + 1}`}
+                  width={500}
+                  height={500}
+                  className="w-full h-full object-cover"
+                  priority={index === 0}
+                />
+              </div>
               <div className="w-full gamingFont text-center mt-2 text-[1.5rem] md:text-[2.5rem] text-white font-semibold mix-blend-screen">
                 {card.title}
               </div>
             </div>
+
           ))}
         </div>
 
