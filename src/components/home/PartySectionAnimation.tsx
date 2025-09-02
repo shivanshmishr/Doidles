@@ -185,7 +185,7 @@ const PartySectionAnimation = () => {
                 alt={`Card ${index + 1}`}
                 width={250}
                 height={230}
-                className="aspect-square w-full h-full md:w=[55vh] md:h=[55vh] rounded-lg object-cover"
+                className="aspect-square w-full h-full md:w-[55vh] md:h-[55vh] rounded-lg object-cover"
                 priority={index === 0}
               />
               <div className="w-full gamingFont text-center mt-2 text-[1.5rem] md:text-[2.5rem] text-white font-semibold mix-blend-screen">
