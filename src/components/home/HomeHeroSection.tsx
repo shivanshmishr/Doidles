@@ -8,7 +8,7 @@ export const HomeHeroSection = () => {
         autoPlay={true}
         muted
         playsInline
-        src="/main/home.mp4"
+        src="/main/ldvideo.mp4"
         width={1920}
         height={1080}
         loop
@@ -18,7 +18,7 @@ export const HomeHeroSection = () => {
         autoPlay={true}
         muted
         playsInline
-        src="main/home.mp4"
+        src="main/ptvideo.mp4"
         width={1920}
         height={1080}
         loop

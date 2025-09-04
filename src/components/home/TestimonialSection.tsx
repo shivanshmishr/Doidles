@@ -34,7 +34,7 @@ export const TestimonialSection = () => {
             height={100}
             src="/testimonial/testi1.png"
             alt="testi1"
-            className="absolute w-16 h-16 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-2 rotate-0 bg-[#F6D3BD] rounded-full md:w-28 md:h-28"
+            className="absolute w-16 h-16 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 p-2 rotate-0 bg-[#690882] rounded-full md:w-28 md:h-28"
           />
           <div className="outer-spin border-2 flex flex-col justify-center items-center border-white/40 w-[40vh] h-[40vh] md:w-[60vh] md:h-[60vh] rounded-full mx-auto relative">
             <Image
@@ -42,16 +42,16 @@ export const TestimonialSection = () => {
               height={100}
               src="/testimonial/test2.png"
               alt="testi1"
-              className="absolute rotate-0 -left-6 md:-left-10 w-12 h-12 p-1 bg-[#D1FFF4] rounded-full md:w-20 md:h-20"
+              className="absolute rotate-0 -left-6 md:-left-10 w-12 h-12 p-1 bg-[#bd3bf9] rounded-full md:w-16 md:h-16"
             />
             <div className="absolute -top-2.5 md:-top-4 rounded-full w-5 h-5 md:w-8 md:h-8 bg-[#D214E6]" />
-            <div className="absolute -bottom-2.5 md:-bottom-4 rounded-full w-5 h-5 md:w-8 md:h-8 bg-[#A05A43]" />
+            <div className="absolute -bottom-2.5 md:-bottom-4 rounded-full w-5 h-5 md:w-8 md:h-8 bg-[#b450f7]" />
             <Image
               width={100}
               height={100}
               src="/testimonial/testi3.png"
               alt="testi3"
-              className="absolute rotate-0 -right-5 md:-right-10 w-12 h-12 p-1 bg-[#C0D9BF] rounded-full md:w-20 md:h-20"
+              className="absolute rotate-0 -right-5 md:-right-9 w-12 h-12 p-1 bg-[#cf70e1] rounded-full md:w-16 md:h-16"
             />
 
             {/* Inner Ring */}
@@ -61,16 +61,16 @@ export const TestimonialSection = () => {
                 height={100}
                 src="/testimonial/test2.png"
                 alt="test2"
-                className="absolute rotate-0 top-0 -translate-y-1/2 w-12 h-12 p-1 bg-[#D1FFF4] rounded-full md:w-20 md:h-20"
+                className="absolute rotate-0 top-0 -translate-y-1/2 w-12 h-12 p-1 bg-[#68075e] rounded-full md:w-12 md:h-12"
               />
               <div className="absolute -left-3 rounded-full w-6 h-6 bg-[#D214E6]" />
-              <div className="absolute -right-3 rounded-full w-6 h-6 bg-[#A05A43]" />
+              <div className="absolute -right-3 rounded-full w-6 h-6 bg-[#f80de8]" />
               <Image
                 width={100}
                 height={100}
                 src="/testimonial/testi3.png"
                 alt="testi3"
-                className="absolute rotate-0 -bottom-6 md:-bottom-10 w-12 h-12 p-1 bg-[#C0D9BF] rounded-full md:w-20 md:h-20"
+                className="absolute rotate-0 -bottom-6 md:-bottom-8 w-12 h-12 p-1 bg-[#a70cfa] rounded-full md:w-12 md:h-12"
               />
 
             </div>

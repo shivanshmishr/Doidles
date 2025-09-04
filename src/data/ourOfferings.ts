@@ -8,7 +8,7 @@ export const ourOfferings = [
   },
   {
     id: 2,
-    src: "/main/ourofferings/PartyEvents.jpg",
+    src: "/main/ourofferings/Party_Events.jpg",
     name:"Event",
     alt: "A workshop, family gathering, or corporate event, we have got you covered",
      link: "https://www.instagram.com/reel/DK4AJB8o1sp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",

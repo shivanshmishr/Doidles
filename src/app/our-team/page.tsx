@@ -54,7 +54,7 @@ const OurTeamPage = () => {
         <div className="flex flex-col w-full md:flex-row justify-between gap-10">
           <div className="md:w-[40%]">
             <Image
-              src="/images/amitsharma.png"
+              src="/main/team/guru.png"
               alt="Amit Sharma"
               width={600}
               height={600}
@@ -83,7 +83,7 @@ const OurTeamPage = () => {
         <div className="flex flex-col w-full md:flex-row-reverse justify-between gap-10">
           <div className="md:w-[40%]">
             <Image
-              src="/images/amitsharma.png"
+              src="/main/team/babul.png"
               alt="Babulnath Dubey"
               width={600}
               height={600}
@@ -105,7 +105,7 @@ const OurTeamPage = () => {
       </FadeInSection>
 
       {/* Third Member - Fade from Left */}
-      <FadeInSection direction="left">
+      {/* <FadeInSection direction="left">
         <div className="flex flex-col w-full md:flex-row justify-between gap-10">
           <div className="md:w-[40%]">
             <Image
@@ -134,7 +134,7 @@ const OurTeamPage = () => {
             </p>
           </div>
         </div>
-      </FadeInSection>
+      </FadeInSection> */}
     </div>
   );
 };

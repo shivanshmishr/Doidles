@@ -26,7 +26,7 @@ export const HeroSection = () => {
         {!play ? (
           <>
             <Image
-              src="/images/game.gif"
+              src="/main/games/game2.gif"
               alt="Party Events"
               width={1920}
               height={1080}

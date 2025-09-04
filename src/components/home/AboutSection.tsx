@@ -29,7 +29,7 @@ export const AboutSection = () => {
           className="w-full md:w-[45%] relative h-full"
         >
           <Image
-            src="/main/whydoodles.jpg"
+            src="/main/WhyDoodles.gif"
             alt="Founder"
             width={1080}
             height={1080}

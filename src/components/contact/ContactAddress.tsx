@@ -13,13 +13,21 @@ const locations = [
   },
   {
     id: 2,
+    city: " Sisra, Haryana",
+    address:
+      "Ground Floor, OHM Cine Garden and Shopping Complex, Fatehbad Road, NH9, Sirsa, Haryana 125055",
+    phone: "+91- 85700 83809",
+    link: "https://wa.me/918570083809"
+  },
+  {
+    id: 3,
     city: "Kullu, Himachal Pradesh",
     address: "4th Floor, Kullu Central Mall, Inter-State Bus Terminal, Bus Stand Road, Sarvari, Kullu, Himachal Pradesh 175101",
     phone: "+91- 98054 79800",
     link: "https://wa.me/919805479800"
   },
   {
-    id: 3,
+    id: 4,
     city: "Coimbatore, Tamil Nadu",
     address:
       "SRK Arcade, Kamakshipuram near Cambodia mills, Trichy road, Ondipudur post, Pallpalayam, Coimbatore, TN- 641016",
@@ -27,21 +35,14 @@ const locations = [
     link: "https://wa.me/919629865168"
   },
   {
-    id: 4,
+    id: 5,
     city: "Calicut, Kerala",
     address:
       "2nd and 4th Floor, RP Blue Diamond Mall, Mavoor Rd, opposite New Bus Stand, Parayancheri, Kottooli, Kozhikode, Kerala 673004",
     phone: "+91- 89435 50691",
     link: "https://wa.me/918943550691"
   },
-  {
-    id: 5,
-    city: " Sisra, Haryana",
-    address:
-      "Ground Floor, OHM Cine Garden and Shopping Complex, Fatehbad Road, NH9, Sirsa, Haryana 125055",
-    phone: "+91- 89435 50691",
-    link: "https://maps.app.goo.gl/tjbnn6Sgq5DQ89Qw5"
-  },
+
 ];
 
 export const ContactAddress = () => {

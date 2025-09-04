@@ -38,7 +38,7 @@ export const PartyHeader = () => {
         {birthdayBooking.map((item) => (
           <div
             key={item.id}
-            className="inline-block mx-4 my-2 w-40 h-40 md:h-[40vh] md:w-[40vh] rounded-lg shadow-[0_0_20px_#8e2de2] overflow-hidden"
+            className="inline-block mx-4 my-2 w-40 h-60 md:h-[60vh] md:w-[40vh] rounded-lg shadow-[0_0_20px_#8e2de2] overflow-hidden"
           >
             <Image
               src={item.img}
@@ -59,7 +59,7 @@ export const PartyHeader = () => {
         {schoolPicnic.map((item) => (
           <div
             key={item.id}
-            className="inline-block mx-4 my-2 w-40 h-40 md:h-[40vh] md:w-[40vh] rounded-lg shadow-[0_0_20px_#8e2de2] overflow-hidden"
+            className="inline-block mx-4 my-2 w-40 h-60 md:h-[60vh] md:w-[40vh] rounded-lg shadow-[0_0_20px_#8e2de2] overflow-hidden"
           >
             <Image
               src={item.img}
