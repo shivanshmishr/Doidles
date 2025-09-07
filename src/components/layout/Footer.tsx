@@ -56,8 +56,10 @@ export const Footer = () => {
             <Link href="/party-events">
               <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Party Bookings</li>
             </Link>
+            <Link href="https://www.instagram.com/stories/highlights/18057323161947630/">
+              <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Offers</li>
+            </Link>
 
-            <li className="text-md text-white/80 hover:text-[#D214E6] hover:scale-125">Offers</li>
           </ul>
         </div>
         <div className="flex flex-col pb-10 items-center">

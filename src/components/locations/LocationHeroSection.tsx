@@ -63,8 +63,7 @@ const LocationHeroSection = () => {
 
           {/* Description */}
           <p className="text-gray-300 mb-10">
-            Our professionals and experts are spread across different states in India.
-            Visit us at any of our branches to get a consultation on your Business Loan needs.
+            Doodles Gaming Zone is now reaching families Pan India, offering a wide range of gaming experiences like Arcade games, VR, bowling, soft play, and much more
           </p>
 
           {/* Stats */}

@@ -10,8 +10,8 @@ import {
   SheetTitle,
   SheetContent,
   SheetTrigger,
+  SheetClose,
 } from "@/components/ui/sheet";
-
 
 export const Navbar = () => {
   return (
@@ -42,9 +42,9 @@ export const Navbar = () => {
                 {path === "/"
                   ? "Home"
                   : path
-                      .replace("/", "")
-                      .replace("-", " ")
-                      .replace(/\b\w/g, (l) => l.toUpperCase())}
+                    .replace("/", "")
+                    .replace("-", " ")
+                    .replace(/\b\w/g, (l) => l.toUpperCase())}
               </li>
             </Link>
           ))}
@@ -56,7 +56,7 @@ export const Navbar = () => {
           <span className="text-md font-medium">Party Booking</span>
         </button>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu */}
         <Sheet>
           <SheetTrigger asChild>
             <button className="md:hidden">
@@ -64,8 +64,10 @@ export const Navbar = () => {
             </button>
           </SheetTrigger>
 
-          <SheetContent side="right" className="w-[80%] bg-black/80 backdrop-blur-2xl flex flex-col space-y-10 justify-center items-center">
-
+          <SheetContent
+            side="right"
+            className="w-[80%] bg-black/80 backdrop-blur-2xl flex flex-col space-y-10 justify-center items-center"
+          >
             <SheetHeader className="hidden">
               <SheetTitle className="sr-only">Mobile Navigation</SheetTitle>
             </SheetHeader>
@@ -79,23 +81,29 @@ export const Navbar = () => {
                 "/party-events",
                 "/our-team",
               ].map((path, i) => (
-                <Link key={i} href={path}>
-                  <li className="text-2xl font-semibold list-none cursor-pointer hover:scale-110 hover:underline transition-all">
-                    {path === "/"
-                      ? "Home"
-                      : path
+                <SheetClose asChild key={i}>
+                  <Link href={path}>
+                    <li className="text-2xl font-semibold list-none cursor-pointer hover:scale-110 hover:underline transition-all">
+                      {path === "/"
+                        ? "Home"
+                        : path
                           .replace("/", "")
                           .replace("-", " ")
                           .replace(/\b\w/g, (l) => l.toUpperCase())}
-                  </li>
-                </Link>
+                    </li>
+                  </Link>
+                </SheetClose>
               ))}
             </div>
+
             <hr className="border-white/20" />
-            <button className="w-fit flex flex-row items-center gap-2 px-3 py-2 border-2 border-white/20 rounded-xl bg-[#4E035A] hover:scale-110 cursor-pointer transition-all duration-300">
-              <RiWhatsappFill className="text-xl" />
-              <span className="text-md font-medium">Party Booking</span>
-            </button>
+
+            <SheetClose asChild>
+              <button className="w-fit flex flex-row items-center gap-2 px-3 py-2 border-2 border-white/20 rounded-xl bg-[#4E035A] hover:scale-110 cursor-pointer transition-all duration-300">
+                <RiWhatsappFill className="text-xl" />
+                <span className="text-md font-medium">Party Booking</span>
+              </button>
+            </SheetClose>
           </SheetContent>
         </Sheet>
       </div>

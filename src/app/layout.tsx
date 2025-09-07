@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Comic_Neue, Audiowide } from "next/font/google";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { Loader } from "@/components/ui/Loader"
 import "./globals.css";
 
 const comic_neue = Comic_Neue({
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${comic_neue.variable} ${audiowide.variable} antialiased`}>
         <Navbar />
+        <Loader />
         <div>{children}</div>
         <Footer />
       </body>

@@ -11,13 +11,13 @@ export const ourOfferings = [
     src: "/main/ourofferings/Party_Events.jpg",
     name:"Event",
     alt: "A workshop, family gathering, or corporate event, we have got you covered",
-     link: "https://www.instagram.com/reel/DK4AJB8o1sp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
+     link: "https://www.instagram.com/reel/DKzQPteocGg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
   },
   {
     id: 3,
     src: "/main/ourofferings/Offers.jpg",
     name:"Offers",
     alt: "Play 3 games at 99 or avail a flat 50% discount on offer days",
-     link: "https://www.instagram.com/reel/DK4AJB8o1sp/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
+     link: "https://www.instagram.com/reel/DMFpKIsI9dA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA%3D%3D",
   },
 ];
