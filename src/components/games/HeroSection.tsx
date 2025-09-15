@@ -45,7 +45,10 @@ export const HeroSection = () => {
             src="/dinoo/dino_fit.html"
             title="Dino Game"
             className="w-full h-[30vh] md:h-[50vh] overflow-y-hidden border-2 border-white/40 rounded-xl"
+            allow="autoplay; fullscreen; gamepad; keyboard"
+            sandbox="allow-scripts allow-same-origin allow-popups allow-pointer-lock"
           />
+
         )}
       </div>
 

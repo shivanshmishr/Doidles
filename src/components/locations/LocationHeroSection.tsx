@@ -51,7 +51,7 @@ const LocationHeroSection = () => {
   };
 
   return (
-    <div className="relative w-[80%] my-10 min-h-screen mx-auto">
+    <div className="relative w-[90%] my-5 min-h-[70vh] mx-auto">
 
       <div className="flex space-y-10 flex-col-reverse md:flex-row items-center justify-center">
         {/* LEFT SIDE LOCATIONS */}

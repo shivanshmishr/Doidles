@@ -246,7 +246,8 @@
         */
         loadSounds: function () {
           if (!IS_IOS) {
-            this.audioContext = new AudioContext();
+            this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+
             var resourceTemplate =
               document.getElementById(this.config.RESOURCE_TEMPLATE_ID).content;
             for (var sound in Runner.sounds) {
@@ -701,8 +702,15 @@
       Runner.updateCanvasScaling = function (canvas, opt_width, opt_height) {
         var context = canvas.getContext('2d');
         // Query the various pixel ratios
-        var devicePixelRatio = Math.floor(window.devicePixelRatio) || 1;
-        var backingStoreRatio = Math.floor(context.webkitBackingStorePixelRatio) || 1;
+        var devicePixelRatio = window.devicePixelRatio || 1;
+        var backingStoreRatio =
+          context.backingStorePixelRatio ||
+          context.webkitBackingStorePixelRatio ||
+          context.mozBackingStorePixelRatio ||
+          context.msBackingStorePixelRatio ||
+          context.oBackingStorePixelRatio ||
+          1;
+
         var ratio = devicePixelRatio / backingStoreRatio;
         // Upscale the canvas if the two ratios don't match
         if (devicePixelRatio !== backingStoreRatio) {
@@ -2680,15 +2688,16 @@
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAABLAAAAAMAgMAAAAPCKxBAAAABlBMVEX///9TU1NYzE1OAAAAAXRSTlMAQObYZgAAALJJREFUeF7t1EEKAyEMhtEvMNm7sPfJEVyY+1+ltLgYAsrQCtWhbxEhQvgxIJtSZypxa/WGshgzKdbq/UihMFMlt3o/CspEYoihIMaAb6mCvM6C+BTAeyo+wN4yykV/6pVfkdLpVyI1hh7GJ6QunUoLEQlQglNP2nkQkeF8+ei9cLxMue1qxVRfk1Ej0s6AEGWfVOk0QUtnK5Xo0Lac6wpdtnQqB6VxomPaz+dgF1PaqqmeWJlz1jYUaSIAAAAASUVORK5CYII="
           jstcache="0">
         <!-- <img id="1x-trex" src="./con.png" jstcache="0"> -->
-        <img id="1x-trex" src="coni_resized.png" style="display:none;">
-        <img id="1x-obstacle-large" src="arcade_large.png" style="display:none;">
+        <img id="1x-trex" src="/dinoo/coni_resized.png" style="display:none;">
+        <img id="1x-obstacle-large" src="/dinoo/arcade_large.png" style="display:none;">
 
-        <img id="1x-obstacle-small" src="arcade_small.png" style="display:none;">
+        <img id="1x-obstacle-small" src="/dinoo/arcade_small.png" style="display:none;">
         <img id="1x-restart"
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAgCAQAAADQmBIFAAAAZklEQVR4Xu3WMQoAIAxDUe/Y+58jYwV1CwQJWQT5o/DAoaWjV2i/LRym/A5FjEsR41LPQchByEHwIVAEC4gZpghmSDP8egXpr/hQZaAKQFQe+pBOQAblDC336qrlPpSg0MEjInbWTLFFmwc8TpTAAAAAAElFTkSuQmCC"
           jstcache="0">
         <!-- <img id="1x-console" src="./con.png" jstcache="0"> -->
-        <img id="1x-arcade" src="./arcade.png" jstcache="0">
+        <img id="1x-arcade" src="/dinoo/arcade.png" jstcache="0">
+
 
       </div>
       <div id="offline-resources-2x" jstcache="0">
@@ -2712,9 +2721,9 @@
           src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEgAAABAAgMAAADE0Nm5AAAACVBMVEX////39/dTU1OabbyfAAAAAXRSTlMAQObYZgAAAGNJREFUeF7d1CEOwDAMQ9GS3q/ExPcz8Sm3gYBWVRo0afvwSQl0ax1To22JntKWupfGjriSXiLViCXCmXBHCykJTxaYEeIQGcVrHYklcoX8YYpSUggzcpBTiv5JtQWorUltmS6s4ZKtz2GgjAAAAABJRU5ErkJggg=="
           jstcache="0">
         <!-- <img id="2x-console" src="./con.png" jstcache="0"> -->
-        <img id="2x-obstacle-small" src="arcade_small.png" style="display:none;">
-        <img id="2x-obstacle-large" src="arcade_large.png" style="display:none;">
-        <img id="2x-trex" src="coni_resized.png" style="display:none;">
+        <img id="2x-obstacle-small" src="/dinoo/arcade_small.png" style="display:none;">
+        <img id="2x-obstacle-large" src="/dinoo/arcade_large.png" style="display:none;">
+        <img id="2x-trex" src="/dinoo/coni_resized.png" style="display:none;">
         <!-- <img id="2x-arcade" src="./arcade.png" jstcache="0"> -->
       </div>
       <template id="audio-resources" jstcache="0">
@@ -2731,7 +2740,11 @@
       if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1) {
         new Runner('.interstitial-wrapper');
       } else {
-        document.getElementById("main-frame-notchrome").style.display = "";
+        const notChromeFrame = document.getElementById("main-frame-notchrome");
+        if (notChromeFrame) {
+          notChromeFrame.style.display = "block"; // or whatever you need
+        }
+
       }
     </script>
 
@@ -2744,6 +2757,47 @@
     </script>
 
 
+    <!-- Hidden sprite images required by the game -->
+    <img id="1x-trex" src="/dinoo/coni.png" style="display:none" />
+    <img id="1x-horizon" src="/dinoo/console.png" style="display:none" />
+    <img id="1x-cloud" src="/dinoo/arcade.png" style="display:none" />
+    <img id="1x-obstacle-small" src="/dinoo/arcade_small.png" style="display:none" />
+    <img id="1x-obstacle-large" src="/dinoo/arcade_large.png" style="display:none" />
+    <img id="1x-restart" src="/dinoo/con_resized.png" style="display:none" />
+    <img id="1x-text" src="/dinoo/coni_resized.png" style="display:none" />
+
+    <!-- HiDPI versions mapped to same images (since no 2x assets exist) -->
+    <img id="2x-trex" src="/dinoo/coni.png" style="display:none" />
+    <img id="2x-horizon" src="/dinoo/console.png" style="display:none" />
+    <img id="2x-cloud" src="/dinoo/arcade.png" style="display:none" />
+    <img id="2x-obstacle-small" src="/dinoo/arcade_small.png" style="display:none" />
+    <img id="2x-obstacle-large" src="/dinoo/arcade_large.png" style="display:none" />
+    <img id="2x-restart" src="/dinoo/con_resized.png" style="display:none" />
+    <img id="2x-text" src="/dinoo/coni_resized.png" style="display:none" />
+
+    <script>
+      window.addEventListener("load", () => {
+        // Preload and decode all hidden sprite images
+        const ids = [
+          "1x-trex", "1x-horizon", "1x-cloud", "1x-obstacle-small", "1x-obstacle-large", "1x-restart", "1x-text",
+          "2x-trex", "2x-horizon", "2x-cloud", "2x-obstacle-small", "2x-obstacle-large", "2x-restart", "2x-text"
+        ];
+
+        const imgs = ids
+          .map(id => document.getElementById(id))
+          .filter(Boolean); // only keep those that exist
+
+
+        const promises = Array.from(imgs).map(img =>
+          img.decode ? img.decode().catch(() => { }) : Promise.resolve()
+        );
+
+        Promise.all(promises).then(() => {
+          // Start the game once images are guaranteed loaded
+          new Runner(".interstitial-wrapper");
+        });
+      });
+    </script>
 
 
 </body>

@@ -13,7 +13,7 @@ const locations = [
   },
   {
     id: 2,
-    city: " Sisra, Haryana",
+    city: " Sirsa, Haryana",
     address:
       "Ground Floor, OHM Cine Garden and Shopping Complex, Fatehbad Road, NH9, Sirsa, Haryana 125055",
     phone: "+91- 85700 83809",

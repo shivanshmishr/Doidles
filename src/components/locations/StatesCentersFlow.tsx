@@ -40,11 +40,11 @@ export default function StatesCentersFlow() {
     return (
         <section
             ref={sectionRef}
-            className="network-section relative min-h-screen bg-black text-white overflow-hidden py-20"
+            className="network-section relative min-h-[70vh] bg-black text-white overflow-hidden py-12 md:py-16"
         >
             <div className="max-w-6xl mx-auto px-6 relative z-10">
-                <div className="text-center mb-20">
-                    <h2 className="text-5xl font-bold bg-gradient-to-r from-white to-purple-600 bg-clip-text text-transparent animate-pulse drop-shadow-lg">
+                <div className="text-center mb-10">
+                    <h2 className="w-full text-center text-white uppercase gamingFont font-black text-4xl leading-none tracking-tight">
                         Upcoming Location
                     </h2>
                     <p className="uppercase tracking-[3px] text-gray-400 mt-4">

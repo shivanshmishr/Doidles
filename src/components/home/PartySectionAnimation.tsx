@@ -6,8 +6,8 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { homePartySection } from "@/data/homePartySection";
 
-const PHASE_A_END = 0.2; // stack
-const PHASE_B_END = 0.4; // disperse
+const PHASE_A_END = 0.0; // stack
+const PHASE_B_END = 0.25; // disperse
 
 const PartySectionAnimation = () => {
   const stickySectionRef = useRef<HTMLDivElement | null>(null);
@@ -26,7 +26,7 @@ const PartySectionAnimation = () => {
     const stickySection = stickySectionRef.current!;
     const cards = cardsRef.current;
     const totalCards = cards.length;
-    const stickyHeight = window.innerHeight * (cards.length < 5 ? 5 : 7);
+    const stickyHeight = window.innerHeight * (cards.length < 3 ? 3 : 5);
 
 
     // Hide-to-show: avoid FOUC/overlap before first paint

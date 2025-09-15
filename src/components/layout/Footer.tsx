@@ -14,7 +14,8 @@ export const Footer = () => {
     <div className="w-[90%] mx-auto">
 
       {/* Brand Logo */}
-      <div>
+      {/* Brand Logo */}
+      <div className="flex justify-center md:justify-start">
         <Image
           width={300}
           height={200}
@@ -23,6 +24,7 @@ export const Footer = () => {
           className="w-auto h-20 object-contain"
         />
       </div>
+
 
       {/* Quick Links */}
       <div className="grid grid-cols-1 md:grid-cols-3 justify-end gap-6 mt-10">
