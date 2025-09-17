@@ -16,8 +16,8 @@ const locations = [
     city: " Sirsa, Haryana",
     address:
       "Ground Floor, OHM Cine Garden and Shopping Complex, Fatehbad Road, NH9, Sirsa, Haryana 125055",
-    phone: "+91- 85700 83809",
-    link: "https://wa.me/918570083809"
+    phone: "+91- 93061 92339",
+    link: "https://wa.me/919306192339"
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ const locations = [
   },
   {
     id: 5,
-    city: "Calicut, Kerala",
+    city: "Kozhikode, Kerala",
     address:
       "2nd and 4th Floor, RP Blue Diamond Mall, Mavoor Rd, opposite New Bus Stand, Parayancheri, Kottooli, Kozhikode, Kerala 673004",
     phone: "+91- 89435 50691",

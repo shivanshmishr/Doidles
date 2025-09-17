@@ -10,7 +10,9 @@ export const PartyContents = () => {
   return (
     <div className="min-h-screen custom-bg2 p-6 my-20">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 gap-10 md:block md:columns-2 lg:columns-3 md:gap-20  md:space-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-20 items-center">
+
+
           {galleryItems.map((item, index) => (
             <motion.div
               key={item.id}

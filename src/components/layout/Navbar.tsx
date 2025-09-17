@@ -51,10 +51,16 @@ export const Navbar = () => {
         </div>
 
         {/* WhatsApp Button */}
-        <button className="hidden md:flex flex-row items-center gap-2 px-3 py-1 border-2 border-white/20 rounded-xl bg-[#4E035A] hover:scale-110 cursor-pointer transition-all duration-300">
+        <a
+          href="https://wa.me/918879930979"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hidden md:flex flex-row items-center gap-2 px-3 py-1 border-2 border-white/20 rounded-xl bg-[#4E035A] hover:scale-110 cursor-pointer transition-all duration-300"
+        >
           <RiWhatsappFill className="text-xl" />
           <span className="text-md font-medium">Party Booking</span>
-        </button>
+        </a>
+
 
         {/* Mobile Menu */}
         <Sheet>
@@ -99,11 +105,17 @@ export const Navbar = () => {
             <hr className="border-white/20" />
 
             <SheetClose asChild>
-              <button className="w-fit flex flex-row items-center gap-2 px-3 py-2 border-2 border-white/20 rounded-xl bg-[#4E035A] hover:scale-110 cursor-pointer transition-all duration-300">
+              <a
+                href="https://wa.me/918879930979"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-fit flex flex-row items-center gap-2 px-3 py-2 border-2 border-white/20 rounded-xl bg-[#4E035A] hover:scale-110 cursor-pointer transition-all duration-300"
+              >
                 <RiWhatsappFill className="text-xl" />
                 <span className="text-md font-medium">Party Booking</span>
-              </button>
+              </a>
             </SheetClose>
+
           </SheetContent>
         </Sheet>
       </div>

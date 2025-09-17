@@ -81,7 +81,7 @@ const LocationHeroSection = () => {
               <div className="bg-purple-600/20 p-2 rounded-full mb-2">
                 <Building className="w-8 h-8 text-[#D214E6]" />
               </div>
-              <h3 className="text-2xl font-semibold">05 Branches</h3>
+              <h3 className="text-2xl font-semibold">05 Gaming Zones</h3>
             </div>
           </div>
 

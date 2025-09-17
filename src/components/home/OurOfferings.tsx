@@ -16,7 +16,7 @@ export const OurOfferings = () => {
   const headingRef = useRef(null);
 
   return (
-    <div className="min-h-screen md:w-[80%] lg:w-[95%] mx-auto p-6" ref={containerRef}>
+    <div className=" md:w-[80%] lg:w-[95%] mx-auto p-6" ref={containerRef}>
       <h1
         ref={headingRef}
         className="gamingFont text-4xl text-center font-extrabold my-12"
