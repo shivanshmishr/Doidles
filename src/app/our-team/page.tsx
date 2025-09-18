@@ -51,7 +51,7 @@ const OurTeamPage = () => {
 
       {/* First Member - Fade from Left */}
       <FadeInSection direction="left">
-        <div className="flex flex-col w-full md:flex-row justify-between gap-10">
+        <div className="flex flex-col w-full md:flex-row justify-between gap-5">
           <div className="md:w-[40%]">
             <Image
               src="/main/team/guru.png"
@@ -80,7 +80,7 @@ const OurTeamPage = () => {
 
       {/* Second Member - Fade from Right */}
       <FadeInSection direction="right">
-        <div className="flex flex-col w-full md:flex-row-reverse justify-between gap-10">
+        <div className="flex flex-col w-full md:flex-row-reverse justify-between gap-5">
           <div className="md:w-[40%]">
             <Image
               src="/main/team/babul.png"
