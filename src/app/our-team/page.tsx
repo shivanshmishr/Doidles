@@ -72,7 +72,7 @@ const OurTeamPage = () => {
               Amit Sharma has 23+ years in cinema, retail, and hospitality.
               Ex-MD of Miraj Cinemas; scaled it to 250+ screens, India’s 3rd
               largest chain. His insight and network ensure prime locations and
-              efficient operations.
+              efficient operation's.
             </p>
           </div>
         </div>
