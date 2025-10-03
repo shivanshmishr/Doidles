@@ -61,6 +61,6 @@ export const galleryItems = [
     src: "/main/games/Softplay.jpg",
     alt: "Card9",
     aspectRatio: "aspect-square",
-    video:"/main/videos/Softplay.mp4"
+    video:"/main/videos/SoftPlay.mp4"
   },
 ];
