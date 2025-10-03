@@ -30,7 +30,7 @@ export const galleryItems = [
   },
   {
     id: 5,
-    src: "/main/games/card1.jpg",
+    src: "/main/games/15.png",
     alt: "Card5",
     aspectRatio: "aspect-[3/4]",
     video:"/main/videos/vr.mp4"
@@ -44,17 +44,17 @@ export const galleryItems = [
   },
   {
     id: 7,
-    src: "/main/games/card7.jpg",
+    src: "/main/games/zenith.png",
     alt: "Card7",
     aspectRatio: "aspect-[4/3]",
     video:"/main/videos/zenith.mp4"
   },
   {
     id: 8,
-    src: "/main/games/card8.jpg",
+    src: "/main/games/Games.png",
     alt: "Card8",
     aspectRatio: "aspect-[3/4]",
-    video:"/main/videos/Birthday.mp4"
+    video:"/main/games/ArcadeGames.MOV"
   },
   {
     id: 9,
