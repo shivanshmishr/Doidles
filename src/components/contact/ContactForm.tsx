@@ -34,13 +34,24 @@ const ContactForm = () => {
     const onSubmit = async (data: FormValues) => {
         setLoading(true);
         try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ ...data, source: "contact" }),
+            const body = new URLSearchParams({
+                name: data.name,
+                phone: data.phone,
+                query: data.query,
+                source: "contact",
+                secret: "doodles-2025-9c1a7d6f5b3e4a2f",
             });
 
-            if (res.ok) {
+            const res = await fetch(
+                "https://script.google.com/macros/s/AKfycbxkX7KVW1JsSN_fD46eE_p1ZyAMKDHQc0va3vrNGSr-JPNiWy-QRW0cfGK9ET2QcONH/exec",
+                {
+                    method: "POST",
+                    mode: "no-cors",
+                    body,
+                }
+            );
+
+            if (res.ok || res.type === "opaque") {
                 setMessage({ type: "success", text: "Thank you! Your message has been sent." });
                 form.reset();
             } else {

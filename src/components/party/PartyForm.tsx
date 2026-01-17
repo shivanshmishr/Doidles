@@ -20,6 +20,7 @@ type FormValues = {
 
 const PartyForm = () => {
     const [message, setMessage] = useState<{ type: "success" | "error"; text: string } | null>(null);
+    const [loading, setLoading] = useState(false);
 
     const form = useForm<FormValues>({
         defaultValues: {
@@ -30,14 +31,26 @@ const PartyForm = () => {
     });
 
     const onSubmit = async (data: FormValues) => {
+        setLoading(true);
         try {
-            const res = await fetch("/api/contact", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(data),
+            const body = new URLSearchParams({
+                name: data.name,
+                phone: data.phone,
+                query: data.query,
+                source: "party",
+                secret: "doodles-2025-9c1a7d6f5b3e4a2f",
             });
 
-            if (res.ok) {
+            const res = await fetch(
+                "https://script.google.com/macros/s/AKfycbxkX7KVW1JsSN_fD46eE_p1ZyAMKDHQc0va3vrNGSr-JPNiWy-QRW0cfGK9ET2QcONH/exec",
+                {
+                    method: "POST",
+                    mode: "no-cors",
+                    body,
+                }
+            );
+
+            if (res.ok || res.type === "opaque") {
                 setMessage({ type: "success", text: "Thank you! Your query has been submitted." });
                 form.reset();
             } else {
@@ -45,6 +58,8 @@ const PartyForm = () => {
             }
         } catch (error) {
             setMessage({ type: "error", text: "Server error. Try again later." });
+        } finally {
+            setLoading(false);
         }
 
         // Auto-hide message after 4 seconds
@@ -129,9 +144,13 @@ const PartyForm = () => {
                         {/* Submit Button */}
                         <button
                             type="submit"
-                            className="w-full py-3 rounded-md bg-purple-800 hover:bg-purple-900 text-white font-semibold transition-colors"
+                            disabled={loading}
+                            className={`w-full py-3 rounded-md font-semibold transition-colors ${loading
+                                ? "bg-purple-600 cursor-not-allowed"
+                                : "bg-purple-800 hover:bg-purple-900 text-white"
+                                }`}
                         >
-                            Send
+                            {loading ? "Sending..." : "Send"}
                         </button>
                     </form>
                 </Form>

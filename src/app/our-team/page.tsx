@@ -54,7 +54,7 @@ const OurTeamPage = () => {
         <div className="flex flex-col w-full md:flex-row justify-between gap-5">
           <div className="md:w-[40%]">
             <Image
-              src="/main/team/guru.png"
+              src="/main/team/amit.jpeg"
               alt="Amit Sharma"
               width={600}
               height={600}
@@ -83,7 +83,7 @@ const OurTeamPage = () => {
         <div className="flex flex-col w-full md:flex-row-reverse justify-between gap-5">
           <div className="md:w-[40%]">
             <Image
-              src="/main/team/babul.png"
+              src="/main/team/babu.jpeg"
               alt="Babulnath Dubey"
               width={600}
               height={600}
