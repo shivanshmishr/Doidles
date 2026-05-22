@@ -35,6 +35,14 @@ export const locations = [
     styles: "top-[24%] left-[28%]",
     iframeSrc:
       "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2490.6540125885394!2d75.12988857379682!3d29.529566742784887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39114fbdddaf73cb%3A0xc789c851b2ac61f8!2sOHM%20Cine%20Garden%20%26%20Shopping%20Complex!5e1!3m2!1sen!2sin!4v1756811291339!5m2!1sen!2sin",
+  },
+  {
+    id: 6,
+    name: "Amritsar, Punjab",
+    styles: "top-[18%] left-[26%]",
+    iframeSrc:
+      "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2436.9678094135647!2d74.8751007!3d31.6415876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3919630194741f47%3A0x3ac04516ba2e98f6!2sDOODLES%20-%20THE%20GAMING%20ZONE!5e1!3m2!1sen!2sin!4v1779431449910!5m2!1sen!2sin",
+    mapLink: "https://maps.app.goo.gl/5sY5ZtxEPjXzoqNP6",
   }
 
 ];

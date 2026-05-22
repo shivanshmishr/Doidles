@@ -42,6 +42,14 @@ const locations = [
     phone: "+91- 89435 50691",
     link: "https://wa.me/918943550691"
   },
+  {
+    id: 6,
+    city: "Doodles The Gaming Zone Amritsar",
+    address:
+      "3rd Floor, OMAXE Novelty Mall, Mall Rd, Green Avenue, Amritsar, Punjab 143001",
+    phone: "+91 7986668726",
+    link: "https://wa.me/917986668726"
+  },
 
 ];
 
@@ -49,9 +57,8 @@ export const ContactAddress = () => {
   return (
     <div className="flex flex-col items-center space-y-5 gap-6 px-4">
       {locations.map((location) => (
-        <Link href={location.link}>
+        <Link key={location.id} href={location.link}>
           <div
-            key={location.id}
             className="bg-[#111111] py-5 text-white p-5 rounded-lg w-full max-w-md shadow-[0_0_30px_#8e2de250]"
           >
 

@@ -99,7 +99,8 @@ export const AboutSection = () => {
         >
           <h2 className="md:w-[20%] gamingFont text-3xl font-extrabold">MISSION</h2>
           <p className="md:w-[85%] text-md md:text-xl text-center md:text-left leading-relaxed text-gray-300">
-            At Doodles, our mission is to deliver safe, hygienic, and engaging gaming experiences with dedicated support throughout. As an Indian gaming zone, we align with the Make in India vision, bringing the joy of gaming nationwide.          </p>
+            To deliver safe, hygienic, and engaging gaming experiences with dedicated support staff. As a pioneering Indian gaming zone, we aim to bring joyful gaming experiences to people nationwide.
+          </p>
         </motion.div>
       </div>
     </div>
